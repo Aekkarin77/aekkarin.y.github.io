@@ -1,0 +1,276 @@
+/* ========================================
+   Problem & Objectives
+======================================== */
+
+.paymate-problem {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+}
+
+.paymate-problem__intro {
+    min-width: 0;
+}
+
+
+.paymate-problem__headline {
+    margin: 0 0 38px;
+    color: #002f1c;
+    font-size: clamp(2.8rem, 4.2vw, 3.5rem);
+    font-weight: 750;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.paymate-problem__line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+}
+
+.paymate-problem__line>span {
+    display: block;
+}
+
+.paymate-problem__accent {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.05em;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.paymate-problem__accent::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.03em;
+    left: 0;
+    height: 0.075em;
+    border-radius: 999px;
+    background: #63dda3;
+    content: "";
+    transform: scaleX(0) rotate(-1deg);
+    transform-origin: left center;
+}
+
+.paymate-problem__description {
+    max-width: 650px;
+    color: #596078;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.55;
+}
+
+.paymate-problem__description p {
+    margin: 0;
+}
+
+.paymate-problem__description p+p {
+    margin-top: 28px;
+}
+
+/* Cards */
+
+.paymate-objectives {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.objective-card {
+    min-height: 220px;
+    padding: 20px;
+    border: 1px solid rgb(0 66 36 / 14%);
+    border-radius: 18px;
+    background: rgb(255 255 255 / 18%);
+    box-shadow: 0 18px 50px rgb(0 66 36 / 0%);
+    backdrop-filter: blur(10px);
+    transition:
+        transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1),
+        border-color 300ms ease,
+        background-color 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.objective-card:hover {
+    border-color: rgb(0 117 65 / 28%);
+    background: rgb(255 255 255 / 40%);
+    box-shadow: 0 24px 50px rgb(0 66 36 / 10%);
+    transform: translateY(-8px);
+}
+
+.objective-card__icon {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    background: rgb(99 221 163 / 18%);
+    place-items: center;
+}
+
+.objective-card__icon img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+.objective-card h3 {
+    margin: 0 0 16px;
+    color: #101524;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+}
+
+.objective-card p {
+    margin: 0;
+    color: #646b80;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+/* Initial animation state — applied only when JS is available */
+
+.js .paymate-problem__label,
+.js .paymate-problem__description,
+.js .objective-card {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.js .paymate-problem__line>span {
+    transform: translateY(115%);
+}
+
+/* Animation sequence */
+
+.paymate-problem.is-visible .paymate-problem__label {
+    animation: problem-fade-up 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.paymate-problem.is-visible .paymate-problem__line>span {
+    animation: problem-line-reveal 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.paymate-problem.is-visible .paymate-problem__line:nth-child(2)>span {
+    animation-delay: 110ms;
+}
+
+.paymate-problem.is-visible .paymate-problem__line:nth-child(3)>span {
+    animation-delay: 220ms;
+}
+
+.paymate-problem.is-visible .paymate-problem__accent::after {
+    animation: problem-underline 700ms cubic-bezier(0.22, 1, 0.36, 1) 820ms both;
+}
+
+.paymate-problem.is-visible .paymate-problem__description {
+    animation: problem-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 1050ms both;
+}
+
+.paymate-problem.is-visible .objective-card {
+    animation: problem-card-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.paymate-problem.is-visible .objective-card:nth-child(1) {
+    animation-delay: 1250ms;
+}
+
+.paymate-problem.is-visible .objective-card:nth-child(2) {
+    animation-delay: 1370ms;
+}
+
+.paymate-problem.is-visible .objective-card:nth-child(3) {
+    animation-delay: 1490ms;
+}
+
+.paymate-problem.is-visible .objective-card:nth-child(4) {
+    animation-delay: 1610ms;
+}
+
+@keyframes problem-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes problem-line-reveal {
+    from {
+        transform: translateY(115%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes problem-underline {
+    from {
+        transform: scaleX(0) rotate(-1deg);
+    }
+
+    to {
+        transform: scaleX(1) rotate(-1deg);
+    }
+}
+
+@keyframes problem-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(34px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+    .paymate-objectives {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paymate-problem {
+        grid-template-columns: minmax(0, 1fr) minmax(520px, 1fr);
+        gap: clamp(56px, 7vw, 110px);
+    }
+
+@media (prefers-reduced-motion: reduce) {
+
+    .paymate-problem *,
+    .paymate-problem *::before,
+    .paymate-problem *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .js .paymate-problem__label,
+    .js .paymate-problem__description,
+    .js .objective-card {
+        opacity: 1;
+        transform: none;
+    }
+
+    .js .paymate-problem__line>span {
+        transform: none;
+    }
+
+    .paymate-problem__accent::after {
+        transform: scaleX(1) rotate(-1deg);
+    }
+
+    .objective-card:hover {
+        transform: none;
+    }
+}

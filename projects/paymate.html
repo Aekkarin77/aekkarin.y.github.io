@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PayMate mobile app project by Aekkarin Yimyaem.">
+    <title>PayMate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/projects/paymate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="../assets/js/site.js" defer></script>
+    <script src="../assets/js/paymate.js" defer></script>
+    <script type="module" src="../assets/js/components/site-header.js"></script>
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="paymate-page" id="top">
+        <div aria-hidden="true" class="glow glow--top-left"></div>
+        <div aria-hidden="true" class="glow glow--right"></div>
+        <section class="paymate-hero ">
+            <div class="fireflies" aria-hidden="true"></div>
+
+            <div class="project-back-navigation scroll-reveal">
+                <a class="expandable-back-link expandable-back-link--play" href="../index.html#work"
+                    aria-label="Back to collection">
+                    <span class="expandable-back-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </span>
+                    <span class="expandable-back-link__label">Back to collection</span>
+                </a>
+            </div>
+
+            <div class="paymate-hero__grid">
+                <div class="paymate-hero__content">
+                    <p class="paymate-hero__category scroll-reveal">
+                        FINTECH · REQUIREMENTS ENGINEERING & SYSTEM DESIGN</p>
+                    <h1 class="paymate-hero__title scroll-reveal scroll-reveal--delay-100">PayMate<span>.</span></h1>
+                    <p class="paymate-hero__subtitle scroll-reveal scroll-reveal--delay-200">
+                        Making spending<br /> feel <em>manageable.</em>
+                    </p>
+                    <p class="paymate-hero__description scroll-reveal scroll-reveal--delay-300">
+                        A smarter way to scan receipts, track expenses, split bills,
+                        and take control of your finances.</p>
+                </div>
+                <div class="paymate-hero__visual scroll-reveal">
+                    <div data-scroll-animation
+                        data-animation-src="../assets/animations/hero-paymate.json"></div>
+                </div>
+
+            </div>
+            <div class="paymate-hero__scroll-indicator" aria-hidden="true">
+                <div class="paymate-hero__scroll-animation" data-scroll-animation
+                    data-animation-src="../assets/animations/scroll-down.json"></div>
+            </div>
+
+        </section>
+        <dl class="paymate-info paymate-container scroll-reveal">
+            <div>
+                <dt>Role</dt>
+                <dd>UX/UI Designer</dd>
+            </div>
+            <div>
+                <dt>Course</dt>
+                <dd>Software Engineering</dd>
+            </div>
+            <div>
+                <dt>Year</dt>
+                <dd>2024</dd>
+            </div>
+            <div>
+                <dt>Tools</dt>
+                <dd>Figma, FigJam</dd>
+            </div>
+        </dl>
+        <div class="paymate-content paymate-container">
+            <!--------  Overview ---------------------------------------------------------------------->
+            <section class="paymate-section scroll-reveal" id="overview">
+                <h2>Overview</h2>
+                <p class="section-description">
+                    PayMate is a personal finance management application designed to make everyday expense tracking
+                    simpler and more transparent. It uses OCR technology to extract information from receipts,
+                    automatically categorizes expenses, tracks budgets, analyzes spending trends, and helps users manage
+                    shared expenses.
+
+                    The project focused on translating financial management needs into a structured software solution.
+                    Through comprehensive requirements analysis and system design, the team defined PayMate's
+                    functionality, system architecture, data structure, user flows, and external service integrations
+                    before transforming them into a high-fidelity mobile application prototype.
+                </p>
+            </section>
+            <!-------- Problem & Objectives ----------------------------------------------------------->
+            <section class="paymate-problem" data-problem-section>
+                <div class="paymate-problem__intro">
+                    <p class="section-label paymate-problem__label">
+                        Problem & Objectives
+                    </p>
+
+                    <h2 class="section-title paymate-problem__headline">
+                        <span class="paymate-problem__line">
+                            <span>Managing everyday</span>
+                        </span>
+
+                        <span class="paymate-problem__line">
+                            <span>expenses shouldn't</span>
+                        </span>
+
+                        <span class="paymate-problem__line">
+                            <span>
+                                feel
+                                <em class="section-accent paymate-problem__accent">
+                                    complicated.
+                                </em>
+                            </span>
+                        </span>
+                    </h2>
+
+                    <div class="section-description paymate-problem__description">
+                        <p>
+                            Tracking personal expenses often involves manually recording
+                            transactions, organizing receipts, monitoring budgets, and
+                            calculating shared costs across multiple tools.
+                        </p>
+
+                        <p>
+                            PayMate brings these activities into one connected experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="paymate-objectives">
+                    <article class="objective-card">
+                        <div class="objective-card__icon" aria-hidden="true">
+                            <img src="../assets/icons/extracted-data.svg" alt="">
+                        </div>
+
+                        <h3>Simplify expense tracking</h3>
+                        <p>Extract transaction details from receipts using OCR.</p>
+                    </article>
+
+                    <article class="objective-card">
+                        <div class="objective-card__icon" aria-hidden="true">
+                            <img src="../assets/icons/folder.svg" alt="">
+                        </div>
+
+                        <h3>Organize financial information</h3>
+                        <p>Automatically categorize and store expenses.</p>
+                    </article>
+
+                    <article class="objective-card">
+                        <div class="objective-card__icon" aria-hidden="true">
+                            <img src="../assets/icons/insights.svg" alt="">
+                        </div>
+
+                        <h3>Improve financial awareness</h3>
+                        <p>Visualize budgets, summaries, and spending trends.</p>
+                    </article>
+
+                    <article class="objective-card">
+                        <div class="objective-card__icon" aria-hidden="true">
+                            <img src="../assets/icons/people.svg" alt="">
+                        </div>
+
+                        <h3>Track expenses together</h3>
+                        <p>Keep shared expense records visible to members.</p>
+                    </article>
+                </div>
+            </section>
+            <!-------- Requirements ------------------------------------------------------------------->
+            <section class="requirements-section" id="requirements" data-requirements-section>
+                <header class="requirements-header">
+                    <p class="section-label requirements-header__label">
+                        Key Requirements
+                    </p>
+
+                    <h2 class="section-title requirements-header__title">
+                        <span class="requirements-header__line">
+                            <span>Requirements that shaped</span>
+                        </span>
+
+                        <span class="requirements-header__line">
+                            <span>
+                                the PayMate
+                                <em class="section-accent requirements-header__accent">experience.</em>
+                            </span>
+                        </span>
+                    </h2>
+                </header>
+
+                <p class="requirements-section__instruction scroll-reveal">
+                    *FR = Functional Requirement
+                </p>
+
+                <div class="requirements-layout">
+                    <nav class="requirements-nav scroll-reveal" aria-label="PayMate requirements" data-requirements-nav>
+                        <span class="requirements-nav__indicator" data-requirement-indicator aria-hidden="true"></span>
+
+                        <button class="requirement-button is-active" type="button" data-requirement="0"
+                            aria-pressed="true">
+                            <span class="requirement-button__number">01</span>
+                            <span class="requirement-button__title">
+                                Receipt Processing
+                            </span>
+                        </button>
+
+                        <button class="requirement-button" type="button" data-requirement="1" aria-pressed="false">
+                            <span class="requirement-button__number">02</span>
+                            <span class="requirement-button__title">
+                                Expense Insights
+                            </span>
+                        </button>
+
+                        <button class="requirement-button" type="button" data-requirement="2" aria-pressed="false">
+                            <span class="requirement-button__number">03</span>
+                            <span class="requirement-button__title">
+                                Budget Management
+                            </span>
+                        </button>
+
+                        <button class="requirement-button" type="button" data-requirement="3" aria-pressed="false">
+                            <span class="requirement-button__number">04</span>
+                            <span class="requirement-button__title">
+                                Financial Reports
+                            </span>
+                        </button>
+
+                        <button class="requirement-button" type="button" data-requirement="4" aria-pressed="false">
+                            <span class="requirement-button__number">05</span>
+                            <span class="requirement-button__title">
+                                Receipt Management
+                            </span>
+                        </button>
+
+                        <button class="requirement-button" type="button" data-requirement="5" aria-pressed="false">
+                            <span class="requirement-button__number">06</span>
+                            <span class="requirement-button__title">
+                                Shared Expenses
+                            </span>
+                        </button>
+                    </nav>
+
+                    <article class="requirement-detail scroll-reveal scroll-reveal--delay-300" data-requirement-panel
+                        aria-live="polite">
+                        <div class="requirement-detail__content">
+                            <p class="requirement-detail__code" data-detail-code>
+                                FR004-005
+                            </p>
+
+                            <h3 class="requirement-detail__title" data-detail-title>
+                                Receipt Processing
+                            </h3>
+
+                            <p class="requirement-detail__description" data-detail-description>
+                                Extract transaction details from scanned or uploaded
+                                receipts and automatically categorize each expense.
+                            </p>
+
+                            <span class="requirement-detail__tag" data-detail-tag>
+                                Core Experience
+                            </span>
+                        </div>
+
+                        <span class="requirement-detail__background-number" data-detail-number aria-hidden="true">
+                            01
+                        </span>
+                    </article>
+                </div>
+            </section>
+            <!-------- System Architecture ------------------------------------------------------------>
+            <section class="architecture-section" id="architecture" data-architecture-section>
+                <header class="architecture-header">
+                    <div>
+                        <p class="section-label architecture-header__label">
+                            System Architecture
+                        </p>
+
+                        <h2 class="section-title architecture-header__title">
+                            <span class="architecture-header__line">
+                                <span>A connected system</span>
+                            </span>
+
+                            <span class="architecture-header__line">
+                                <span>
+                                    built around every
+                                    <em class="section-accent architecture-header__accent">
+                                        receipt.
+                                    </em>
+                                </span>
+                            </span>
+                        </h2>
+                    </div>
+
+                    <p class="section-description architecture-header__description">
+                        PayMate connects receipt processing, financial data,
+                        cloud services, and external APIs through one unified
+                        mobile gateway.
+                    </p>
+                </header>
+
+                <div class="architecture-diagram" data-architecture-diagram>
+                    <div class="architecture-diagram__grid" aria-hidden="true"></div>
+
+                    <div class="architecture-diagram__rings" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Connection lines -->
+                    <svg class="architecture-connections" viewBox="0 0 1200 600" preserveAspectRatio="none"
+                        aria-hidden="true">
+                        <path id="architecture-path-receipt" class="architecture-connection" data-connection="receipt"
+                            pathLength="1" d="M 350 150 C 455 150, 445 260, 515 270" />
+
+                        <path id="architecture-path-bank" class="architecture-connection" data-connection="bank"
+                            pathLength="1" d="M 850 150 C 745 150, 755 260, 685 270" />
+
+                        <path id="architecture-path-database" class="architecture-connection" data-connection="database"
+                            pathLength="1" d="M 350 450 C 455 450, 445 340, 515 330" />
+
+                        <path id="architecture-path-cloud" class="architecture-connection" data-connection="cloud"
+                            pathLength="1" d="M 850 450 C 745 450, 755 340, 685 330" />
+
+                        <circle class="architecture-pulse" data-connection="receipt" r="5">
+                            <animateMotion dur="2s" begin="2.8s" repeatCount="indefinite">
+                                <mpath href="#architecture-path-receipt" />
+                            </animateMotion>
+                        </circle>
+
+                        <circle class="architecture-pulse" data-connection="bank" r="5">
+                            <animateMotion dur="2s" begin="3.2s" repeatCount="indefinite">
+                                <mpath href="#architecture-path-bank" />
+                            </animateMotion>
+                        </circle>
+
+                        <circle class="architecture-pulse" data-connection="database" r="5">
+                            <animateMotion dur="2s" begin="3.5s" repeatCount="indefinite">
+                                <mpath href="#architecture-path-database" />
+                            </animateMotion>
+                        </circle>
+
+                        <circle class="architecture-pulse" data-connection="cloud" r="5">
+                            <animateMotion dur="2s" begin="3.8s" repeatCount="indefinite">
+                                <mpath href="#architecture-path-cloud" />
+                            </animateMotion>
+                        </circle>
+                    </svg>
+
+                    <span class="architecture-connection-label architecture-connection-label--receipt"
+                        data-connection="receipt">
+                        Receipt Image
+                    </span>
+
+                    <span class="architecture-connection-label architecture-connection-label--bank"
+                        data-connection="bank">
+                        Transaction Data
+                    </span>
+
+                    <span class="architecture-connection-label architecture-connection-label--database"
+                        data-connection="database">
+                        REST API
+                    </span>
+
+                    <span class="architecture-connection-label architecture-connection-label--cloud"
+                        data-connection="cloud">
+                        Secure Storage
+                    </span>
+
+                    <article class="architecture-core">
+                        <div class="architecture-core__glow" aria-hidden="true"></div>
+
+                        <span class="architecture-core__icon" aria-hidden="true">
+                            <img src="../assets/icons/Core.svg" alt="">
+                        </span>
+
+                        <h3>PayMate Mobile App</h3>
+                        <p>Mobile API Gateway</p>
+                    </article>
+
+                    <button class="architecture-node architecture-node--receipt" type="button" data-node="receipt">
+                        <span class="architecture-node__surface">
+                            <span class="architecture-node__content">
+                                <strong>Receipt Processing</strong>
+                                <small>Google Vision OCR</small>
+                                <span class="architecture-node__extra">
+                                    Reads receipt images and extracts transaction data.
+                                </span>
+                            </span>
+
+                            <span class="architecture-node__icon" aria-hidden="true">
+                                <img src="../assets/icons/ocr.svg" alt="">
+                            </span>
+
+                        </span>
+                    </button>
+
+                    <button class="architecture-node architecture-node--bank" type="button" data-node="bank">
+                        <span class="architecture-node__surface">
+                            <span class="architecture-node__icon" aria-hidden="true">
+                                <img src="../assets/icons/bank.svg" alt="">
+                            </span>
+
+                            <span class="architecture-node__content">
+                                <strong>Bank Integration</strong>
+                                <small>Bank API · Transaction Sync</small>
+                                <span class="architecture-node__extra">
+                                    Synchronizes verified financial transactions.
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+
+                    <button class="architecture-node architecture-node--database" type="button" data-node="database">
+                        <span class="architecture-node__surface">
+                            <span class="architecture-node__content">
+                                <strong>PayMate Database</strong>
+                                <small>Users · Receipts · Budgets</small>
+                                <span class="architecture-node__extra">
+                                    Stores account, receipt, budget, and expense data.
+                                </span>
+                            </span>
+
+                            <span class="architecture-node__icon" aria-hidden="true">
+                                <img src="../assets/icons/database.svg" alt="">
+                            </span>
+                        </span>
+                    </button>
+
+                    <button class="architecture-node architecture-node--cloud" type="button" data-node="cloud">
+                        <span class="architecture-node__surface">
+                            <span class="architecture-node__icon" aria-hidden="true">
+                                <img src="../assets/icons/cloud.svg" alt="">
+                            </span>
+
+                            <span class="architecture-node__content">
+                                <strong>Cloud Services</strong>
+                                <small>Web Scraping · Email Reports</small>
+                                <span class="architecture-node__extra">
+                                    Handles background services and scheduled reports.
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </section>
+            <!-------- User & System Flows ------------------------------------------------------------>
+            <section class="receipt-story" data-receipt-story>
+                <div class="receipt-story__sticky">
+                    <div class="receipt-story__container">
+
+                        <header class="receipt-story__header" data-story-header>
+                            <div class="receipt-story__heading">
+                                <p class="section-label receipt-story__label">
+                                    USER & SYSTEM FLOWS
+                                </p>
+
+                                <h2 class="section-title">
+                                    One receipt.<br>
+                                    Two connected
+                                    <em class="section-accent">journeys.</em>
+                                </h2>
+                            </div>
+
+                            <p class="section-description receipt-story__intro">
+                                Every action users take in PayMate is connected
+                                to a process happening behind the interface.
+                            </p>
+                        </header>
+
+                        <div class="receipt-story__columns" aria-hidden="true">
+                            <span>User Action</span>
+                            <span>Receipt Journey</span>
+                            <span>System Response</span>
+                        </div>
+
+                        <div class="receipt-story__timeline">
+
+                            <div class="receipt-story__track" aria-hidden="true">
+                                <span class="receipt-story__track-background"></span>
+                                <span class="receipt-story__track-progress"></span>
+                            </div>
+
+                            <div class="moving-receipt" aria-hidden="true">
+                                <div class="moving-receipt__paper">
+                                    <strong>RECEIPT</strong>
+
+                                    <span class="receipt-line receipt-line--long"></span>
+                                    <span class="receipt-line"></span>
+                                    <span class="receipt-line receipt-line--short"></span>
+
+                                    <div class="receipt-product">
+                                        <span>Coffee</span>
+                                        <span>$4.50</span>
+                                    </div>
+
+                                    <div class="receipt-product">
+                                        <span>Sandwich</span>
+                                        <span>$8.00</span>
+                                    </div>
+
+                                    <div class="receipt-total">
+                                        <span>Total</span>
+                                        <strong>$12.50</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="receipt-step is-active" data-story-step="0">
+                                <div class="receipt-step__connection" aria-hidden="true">
+                                    <span></span>
+                                </div>
+
+                                <div class="receipt-step__user">
+                                    <span class="receipt-step__number">01</span>
+
+                                    <div>
+                                        <h3>Upload receipt</h3>
+                                        <p>Take or choose a receipt image</p>
+                                    </div>
+                                </div>
+
+                                <div class="receipt-step__center">
+                                    <span>01</span>
+                                </div>
+
+                                <div class="receipt-step__system">
+                                    <span class="receipt-step__icon" aria-hidden="true">
+                                        <img src="../assets/icons/ocr.svg" alt="">
+                                    </span>
+
+                                    <div class="receipt-step__system-copy">
+                                        <h3>Validate & run OCR</h3>
+                                        <p>Process image and extract text</p>
+                                    </div>
+
+                                    <span class="receipt-step__requirement">
+                                        FR023 - FR025
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="receipt-step" data-story-step="1">
+                                <div class="receipt-step__connection" aria-hidden="true">
+                                    <span></span>
+                                </div>
+
+                                <div class="receipt-step__user">
+                                    <span class="receipt-step__number">02</span>
+
+                                    <div>
+                                        <h3>Review details</h3>
+                                        <p>Check extracted information</p>
+                                    </div>
+                                </div>
+
+                                <div class="receipt-step__center">
+                                    <span>02</span>
+                                </div>
+
+                                <div class="receipt-step__system">
+                                    <span class="receipt-step__icon" aria-hidden="true">
+                                        <img src="../assets/icons/extracted-data.svg" alt="">
+                                    </span>
+
+                                    <div class="receipt-step__system-copy">
+                                        <h3>Display extracted data</h3>
+                                        <p>Show items,amounts & merchant</p>
+                                    </div>
+
+                                    <span class="receipt-step__requirement">
+                                        FR004
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="receipt-step" data-story-step="2">
+                                <div class="receipt-step__connection" aria-hidden="true">
+                                    <span></span>
+                                </div>
+
+                                <div class="receipt-step__user">
+                                    <span class="receipt-step__number">03</span>
+
+                                    <div>
+                                        <h3>Edit receipt items</h3>
+                                        <p>Adjust items, amounts or categories</p>
+                                    </div>
+                                </div>
+
+                                <div class="receipt-step__center">
+                                    <span>03</span>
+                                </div>
+
+                                <div class="receipt-step__system">
+                                    <span class="receipt-step__icon" aria-hidden="true">
+                                        <img src="../assets/icons/category.svg" alt="">
+                                    </span>
+
+                                    <div class="receipt-step__system-copy">
+                                        <h3>Categorize expense</h3>
+                                        <p>Suggest and apply a category</p>
+                                    </div>
+
+                                    <span class="receipt-step__requirement">
+                                        FR002, FR005
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="receipt-step" data-story-step="3">
+                                <div class="receipt-step__connection" aria-hidden="true">
+                                    <span></span>
+                                </div>
+
+                                <div class="receipt-step__user">
+                                    <span class="receipt-step__number">04</span>
+
+                                    <div>
+                                        <h3>Confirm expense</h3>
+                                        <p>Finalize and submit</p>
+                                    </div>
+                                </div>
+
+                                <div class="receipt-step__center">
+                                    <span>04</span>
+                                </div>
+
+                                <div class="receipt-step__system">
+                                    <span class="receipt-step__icon" aria-hidden="true">
+                                        <img src="../assets/icons/database.svg" alt="">
+                                    </span>
+
+                                    <div class="receipt-step__system-copy">
+                                        <h3>Store receipt record</h3>
+                                        <p>Save items and metadata</p>
+                                    </div>
+
+                                    <span class="receipt-step__requirement">
+                                        FR016
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="receipt-step" data-story-step="4">
+                                <div class="receipt-step__connection" aria-hidden="true">
+                                    <span></span>
+                                </div>
+
+                                <div class="receipt-step__user">
+                                    <span class="receipt-step__number">05</span>
+
+                                    <div>
+                                        <h3>View insights</h3>
+                                        <p>Explore spending trends</p>
+                                    </div>
+                                </div>
+
+                                <div class="receipt-step__center">
+                                    <span>05</span>
+                                </div>
+
+                                <div class="receipt-step__system">
+                                    <span class="receipt-step__icon" aria-hidden="true">
+                                        <img src="../assets/icons/insights.svg" alt="">
+                                    </span>
+
+                                    <div class="receipt-step__system-copy">
+                                        <h3>Update budget & trends</h3>
+                                        <p>Include in spending insights</p>
+                                    </div>
+
+                                    <span class="receipt-step__requirement">
+                                        FR009-FR010
+                                    </span>
+                                </div>
+                            </article>
+                        </div>
+
+                        <p class="receipt-story__counter" aria-live="polite">
+                            <strong data-story-current>01</strong>
+                            <span>/ 05</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-------- Data & Technical Design -------------------------------------------------------->
+            <section class="data-design" id="data-design" data-data-design>
+                <header class="data-design__header">
+                    <div class="data-design__heading">
+                        <div>
+                            <p class="section-label data-design__label">
+                                DATA & TECHNICAL DESIGN
+                            </p>
+                            <h2 class="section-title" id="data-design-title">
+                                Turning receipts into<br>
+                                structured
+                                <em class="section-accent">financial data.</em>
+                            </h2>
+                        </div>
+                        <p class="section-description data-design__intro">
+                            PayMate transforms receipt images into organized financial
+                            records that can be stored, categorized, searched, and analyzed.
+                        </p>
+                    </div>
+                    <div class="data-design__hint">
+                        <div class="data-design__touch-animation" data-scroll-animation
+                            data-animation-src="../assets/animations/touch.json"></div>
+
+                        <p>
+                            Tap a receipt detail to explore.
+                        </p>
+                    </div>
+                </header>
+                <div class="data-pipeline" data-data-pipeline>
+                    <!-- JS  Mapping within SVG -->
+                    <svg class="data-pipeline__connections" data-mapping-svg aria-hidden="true"></svg>
+
+                    <section class="data-column scroll-reveal data-column--input">
+                        <header class="data-column__header">
+                            <span>01</span>
+                            <h3>Raw Input</h3>
+                        </header>
+
+                        <div class="raw-receipt">
+                            <p class="raw-receipt__id">Receipt #1048</p>
+
+                            <button class="raw-receipt__store mapping-node" type="button" data-map="store_name">
+                                Green Market
+                            </button>
+
+                            <button class="raw-receipt__date mapping-node" type="button" data-map="date">
+                                12 May 2025
+                            </button>
+
+                            <span class="raw-receipt__divider"></span>
+
+                            <button class="raw-receipt__item mapping-node" type="button" data-map="item_coffee">
+                                <span>Coffee</span>
+                                <span>฿80</span>
+                            </button>
+
+                            <button class="raw-receipt__item mapping-node" type="button" data-map="item_sandwich">
+                                <span>Sandwich</span>
+                                <span>฿120</span>
+                            </button>
+
+                            <div class="raw-receipt__item">
+                                <span>Tax</span>
+                                <span>฿14</span>
+                            </div>
+
+                            <span class="raw-receipt__divider"></span>
+
+                            <button class="raw-receipt__total mapping-node" type="button" data-map="total_amount">
+                                <span>Total</span>
+                                <strong>฿214</strong>
+                            </button>
+
+                            <button class="raw-receipt__category mapping-node" type="button" data-map="category">
+                                Food & Dining
+                            </button>
+                        </div>
+
+                        <p class="data-column__format">
+                            JPEG · PNG · PDF
+                        </p>
+                    </section>
+
+                    <section class="data-column scroll-reveal data-column--extracted">
+                        <header class="data-column__header">
+                            <span>02</span>
+                            <h3>Extracted Data</h3>
+                        </header>
+
+                        <div class="extracted-fields">
+                            <button class="extracted-field mapping-node" type="button" data-map="store_name">
+                                <span>store_name</span>
+                                <strong>Green Market</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="date">
+                                <span>date</span>
+                                <strong>2025-05-12</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="item_coffee">
+                                <span>items[0]</span>
+                                <strong>Coffee · 1 · ฿80</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="item_sandwich">
+                                <span>items[1]</span>
+                                <strong>Sandwich · 1 · ฿120</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="category">
+                                <span>category</span>
+                                <strong>Food & Dining</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="total_amount">
+                                <span>total_amount</span>
+                                <strong>฿214</strong>
+                            </button>
+
+                            <button class="extracted-field mapping-node" type="button" data-map="ocr_confidence">
+                                <span>ocr_confidence</span>
+                                <strong>97.8%</strong>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="data-column scroll-reveal data-column--model">
+                        <header class="data-column__header">
+                            <span>03</span>
+                            <h3>Structured Model</h3>
+                        </header>
+
+                        <div class="entity-model">
+                            <article class="entity entity--user">
+                                <h4>User</h4>
+
+                                <div class="entity__fields">
+                                    <span>
+                                        <b>UserID</b>
+                                        <small>PK</small>
+                                    </span>
+                                    <span>Name</span>
+                                    <span>Email</span>
+                                </div>
+                            </article>
+
+                            <span class="entity-relation entity-relation--user">
+                                1:1
+                            </span>
+
+                            <article class="entity entity--receipt">
+                                <h4>Receipt</h4>
+
+                                <div class="entity__fields">
+                                    <span>
+                                        <b>ReceiptID</b>
+                                        <small>PK</small>
+                                    </span>
+
+                                    <span>
+                                        UserID
+                                        <small>FK</small>
+                                    </span>
+
+                                    <button type="button" class="mapping-node" data-map="store_name">
+                                        VendorName
+                                    </button>
+
+                                    <button type="button" class="mapping-node" data-map="date">
+                                        PurchaseDate
+                                    </button>
+
+                                    <button type="button" class="mapping-node" data-map="total_amount">
+                                        TotalAmount
+                                    </button>
+                                </div>
+                            </article>
+
+                            <span class="entity-relation entity-relation--receipt ">
+                                1:N
+                            </span>
+
+                            <article class="entity entity--item" data-map-anchor="item">
+                                <h4>Item</h4>
+
+                                <div class="entity__fields">
+                                    <span>
+                                        <b>ItemID</b>
+                                        <small>PK</small>
+                                    </span>
+
+                                    <span>
+                                        ReceiptID
+                                        <small>FK</small>
+                                    </span>
+
+                                    <span class="mapping-node" data-map-group="item">
+                                        ItemName
+                                    </span>
+
+                                    <span class="mapping-node" data-map-group="item">
+                                        Quantity
+                                    </span>
+
+                                    <span class="mapping-node" data-map-group="item">
+                                        UnitPrice
+                                    </span>
+                                </div>
+                            </article>
+
+                            <span class="entity-relation entity-relation--budget">
+                                1:1
+                            </span>
+
+                            <article class="entity entity--budget">
+                                <h4>Budget</h4>
+
+                                <div class="entity__fields">
+                                    <span>
+                                        <b>BudgetID</b>
+                                        <small>PK</small>
+                                    </span>
+
+                                    <span>
+                                        UserID
+                                        <small>FK</small>
+                                    </span>
+
+                                    <button type="button" class="mapping-node" data-map="category">
+                                        CategoryID
+                                    </button>
+
+                                    <span>LimitAmount</span>
+                                    <span>Period</span>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+                <div class="data-destination scroll-reveal" data-data-destination>
+                    <span class="data-destination__label">
+                        Data destination
+                    </span>
+
+                    <p>
+                        <strong data-destination-field>Hover a field</strong>
+                        <span aria-hidden="true">→</span>
+                        <span data-destination-text>
+                            See how receipt data flows through the system
+                        </span>
+                    </p>
+                </div>
+            </section>
+            <!-------- Design Outcome ---------------------------------------------------------------->
+            <section class="design-outcome" data-design-outcome>
+                <header class="design-outcome__header">
+                    <div class="design-outcome__heading">
+                        <p class="section-label design-outcome__label">
+                            DESIGN OUTCOME
+                        </p>
+
+                        <h2 class="section-title">
+                            From requirements<br>
+                            to high-fidelity <em class="section-accent">UI.</em>
+                        </h2>
+                    </div>
+
+                    <div class="design-outcome__introduction">
+                        <p class="section-description">
+                            The SRS and system design informed the key screens
+                            and interactions in the PayMate prototype.
+                        </p>
+
+                        <a class="figma-button" href="https://www.figma.com/design/YPlR7ajrMk82c8686Ytydc/PayMate?node-id=0-1&t=LHdLp3obiEAQGqbp-1" target="_blank" rel="noopener">
+                            <img class="figma-button__logo" src="../assets/icons/figma.svg" alt="">
+
+                            <span>View Full Prototype</span>
+                            <span class="figma-button__arrow">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </span>
+                        </a>
+                    </div>
+                </header>
+
+                <div class="design-screens" data-design-screens>
+                    <article class="design-screen" data-design-screen="capture" tabindex="0">
+                        <button class="design-screen__requirement" type="button" data-screen-trigger="capture">
+                            FR023-025
+                        </button>
+
+                        <svg class="design-screen__connector" viewBox="0 0 360 100" preserveAspectRatio="none"
+                            aria-hidden="true">
+                            <path pathLength="1" d="M72 0 V55 Q72 70 87 70 H130"></path>
+
+                            <circle cx="72" cy="0" r="4"></circle>
+                            <circle cx="130" cy="70" r="4"></circle>
+                        </svg>
+
+                        <div class="design-screen__phone">
+                            <div class="design-screen__glow"></div>
+
+                            <img src="../assets/images/paymate/receipt-capture.png"
+                                alt="PayMate receipt capture screen">
+                        </div>
+
+                        <h3 data-screen-trigger="capture">
+                            Receipt Capture
+                        </h3>
+                    </article>
+
+                    <article class="design-screen" data-design-screen="category" tabindex="0">
+                        <button class="design-screen__requirement" type="button" data-screen-trigger="category">
+                            FR004-005
+                        </button>
+
+                        <svg class="design-screen__connector" viewBox="0 0 360 100" preserveAspectRatio="none"
+                            aria-hidden="true">
+                            <path pathLength="1" d="M72 0 V55 Q72 70 87 70 H130"></path>
+
+                            <circle cx="72" cy="0" r="4"></circle>
+                            <circle cx="130" cy="70" r="4"></circle>
+                        </svg>
+
+                        <div class="design-screen__phone">
+                            <div class="design-screen__glow"></div>
+
+                            <img src="../assets/images/paymate/expense-categorization.png"
+                                alt="PayMate expense categorization screen">
+                        </div>
+
+                        <h3 data-screen-trigger="category">
+                            Expense Categorization
+                        </h3>
+                    </article>
+
+                    <article class="design-screen" data-design-screen="budget" tabindex="0">
+                        <button class="design-screen__requirement" type="button" data-screen-trigger="budget">
+                            FR013-015
+                        </button>
+
+                        <svg class="design-screen__connector" viewBox="0 0 360 100" preserveAspectRatio="none"
+                            aria-hidden="true">
+                            <path pathLength="1" d="M72 0 V55 Q72 70 87 70 H130"></path>
+
+                            <circle cx="72" cy="0" r="4"></circle>
+                            <circle cx="130" cy="70" r="4"></circle>
+                        </svg>
+
+                        <div class="design-screen__phone">
+                            <div class="design-screen__glow"></div>
+
+                            <img src="../assets/images/paymate/budget-tracking.png"
+                                alt="PayMate budget tracking screen">
+                        </div>
+
+                        <h3 data-screen-trigger="budget">
+                            Budget Tracking
+                        </h3>
+                    </article>
+                </div>
+            </section>
+            <!-------- Challenges & Learnings -------------------------------------------------------->
+            <section class="reflection-section" data-reflection-section>
+                <header class="reflection-header">
+                    <p class="section-label reflection-header__label">
+                        REFLECTION
+                    </p>
+
+                    <h2 class="section-title">Challenges & Learnings</h2>
+
+                    <p class="section-description reflection-header__description">
+                        Turning a broad finance-app brief into a focused,
+                        understandable prototype.
+                    </p>
+                </header>
+
+                <div class="reflection-list">
+                    <article class="reflection-row" style="--row-index: 0">
+                        <span class="reflection-row__number">
+                            01
+                        </span>
+
+                        <div class="reflection-challenge">
+                            <p>Challenge</p>
+                            <h3>Defining the scope</h3>
+                            <span>
+                                A broad finance brief covered more than
+                                the prototype could demonstrate.
+                            </span>
+                        </div>
+
+                        <div class="reflection-connector" aria-hidden="true">
+                            <svg viewBox="0 0 150 28">
+                                <path pathLength="1" d="M2 14 H137"></path>
+
+                                <polyline points="128,5 138,14 128,23"></polyline>
+                            </svg>
+                        </div>
+
+                        <div class="reflection-learning">
+                            <p>Learning</p>
+                            <h3>
+                                Distinguish documented requirements from
+                                designed and implemented features.
+                            </h3>
+                        </div>
+                    </article>
+
+                    <article class="reflection-row" style="--row-index: 1">
+                        <span class="reflection-row__number">
+                            02
+                        </span>
+
+                        <div class="reflection-challenge">
+                            <p>Challenge</p>
+                            <h3>Making OCR data reliable</h3>
+                            <span>
+                                Receipt details can be incomplete or
+                                misread.
+                            </span>
+                        </div>
+
+                        <div class="reflection-connector" aria-hidden="true">
+                            <svg viewBox="0 0 150 28">
+                                <path pathLength="1" d="M2 14 H137"></path>
+
+                                <polyline points="128,5 138,14 128,23"></polyline>
+                            </svg>
+                        </div>
+
+                        <div class="reflection-learning">
+                            <p>Learning</p>
+                            <h3>
+                                Let users review and correct extracted
+                                details before saving.
+                            </h3>
+                        </div>
+                    </article>
+
+                    <article class="reflection-row" style="--row-index: 2">
+                        <span class="reflection-row__number">
+                            03
+                        </span>
+
+                        <div class="reflection-challenge">
+                            <p>Challenge</p>
+                            <h3>Connecting requirements to the design</h3>
+                            <span>
+                                The SRS and SDS describe many features
+                                and system details.
+                            </span>
+                        </div>
+
+                        <div class="reflection-connector" aria-hidden="true">
+                            <svg viewBox="0 0 150 28">
+                                <path pathLength="1" d="M2 14 H137"></path>
+
+                                <polyline points="128,5 138,14 128,23"></polyline>
+                            </svg>
+                        </div>
+
+                        <div class="reflection-learning">
+                            <p>Learning</p>
+                            <h3>
+                                Trace key requirements to a clear screen
+                                or user flow, so the design shows how the
+                                product is meant to work.
+                            </h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="project-documents">
+                    <div class="project-documents__header">
+
+                        <h2>Project Documents</h2>
+
+                        <p>
+                            Supporting documents for this project.
+                        </p>
+
+                    </div>
+
+                    <div class="project-documents__grid">
+                        <a class="document-link" href="../assets/documents/Group14_SRS.pdf" target="_blank"
+                            rel="noopener">
+                            <span class="document-link__icon">
+                                <img src="../assets/icons/pdf.svg" alt="">
+                            </span>
+
+                            <span class="document-link__content">
+                                <strong>SRS</strong>
+                                <span>· Product requirements</span>
+                            </span>
+
+                            <div class="document-card__action">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </div>
+                        </a>
+
+                        <a class="document-link" href="../assets/documents/Group14_SDS.pdf" target="_blank"
+                            rel="noopener">
+                            <span class="document-link__icon">
+                                <img src="../assets/icons/pdf.svg" alt="">
+                            </span>
+
+                            <span class="document-link__content">
+                                <strong>SDS</strong>
+                                <span>· System design</span>
+                            </span>
+
+                            <div class="document-card__action">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </div>
+                        </a>
+
+                       <a class="document-link" href="../assets/documents/Group14_Slide.pdf" target="_blank"
+                            rel="noopener">
+                            <span class="document-link__icon">
+                                <img src="../assets/icons/pdf.svg" alt="">
+                            </span>
+
+                            <span class="document-link__content">
+                                <strong>Slide Presentation</strong>
+                            </span>
+
+                            <div class="document-card__action">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <a class="next-project scroll-reveal" href="steam.html">
+            <span>Next Project</span>
+            <span class="next-project__title"><span>03</span> STEAM <span aria-hidden="true">→</span></span>
+        </a>
+    </main>
+
+</body>
+
+</html>

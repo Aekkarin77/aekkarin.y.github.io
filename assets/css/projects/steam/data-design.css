@@ -1,0 +1,511 @@
+/* ========================================
+   Database Design
+======================================== */
+
+.steam-database {
+    --database-border: var(--steam-border);
+    --database-panel: var(--steam-panel);
+    --database-panel-light: var(--steam-panel-light);
+    --database-muted: var(--steam-muted);
+    --database-lime: var(--steam-green);
+
+    position: relative;
+    overflow: hidden;
+    color: #f5f7fa;
+    background:
+        linear-gradient(rgb(255 255 255 / 2%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px),
+        #030708;
+    background-size: 32px 32px;
+}
+
+.steam-database__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(390px, 0.85fr);
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 34px;
+}
+
+.steam-database__label {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+
+.steam-database__title {
+
+    font-size: clamp(48px, 5.2vw, 82px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.steam-database__introduction {
+    display: flex;
+    min-height: 216px;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 48px;
+    border-left: 1px solid #53606d;
+
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.steam-database__metrics {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.steam-database__metric {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 24px;
+    text-align: center;
+}
+
+.steam-database__metric:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.steam-database__metric:last-child {
+    padding-right: 0;
+}
+
+.steam-database__metric strong {
+    display: block;
+    color: var(--database-lime);
+    font-size: 34px;
+    line-height: 1;
+}
+
+.steam-database__metric span {
+    display: block;
+    margin-top: 8px;
+
+    color: #d6deea;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+/* Entrance */
+
+.steam-database.is-visible .steam-database__label,
+.steam-database.is-visible .steam-database__title,
+.steam-database.is-visible .steam-database__introduction {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.steam-database__label {
+    transition:
+        opacity 600ms ease,
+        transform 600ms ease;
+}
+
+.steam-database__title {
+    transition:
+        opacity 750ms 100ms ease,
+        transform 750ms 100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.steam-database__introduction {
+    transition:
+        opacity 650ms 220ms ease,
+        transform 650ms 220ms ease;
+}
+
+/* Filters */
+
+.steam-database__filters {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 20px;
+    align-items: center;
+
+    margin-bottom: 12px;
+    padding: 12px 18px;
+
+    border: 1px solid var(--database-border);
+    border-radius: 9px;
+    background: rgb(5 13 18 / 92%);
+}
+
+.steam-database__filter-icon,
+.steam-database__diagram-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+
+    border: 1px solid #465564;
+    border-radius: 7px;
+}
+
+.steam-database__filter-icon img,
+.steam-database__diagram-icon img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.steam-database__filter-title,
+.steam-database__diagram-name {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 16px;
+    color: #d7deea;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+.steam-database__filter-title>p,
+.steam-database__diagram-name>p {
+    display: grid;
+    flex: 1;
+    place-items: center;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+
+}
+
+.steam-database__filter-list {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.steam-database__filter-list button {
+    min-height: 42px;
+    border: 1px solid #40505f;
+    border-radius: 7px;
+    color: #eef2f5;
+    background: transparent;
+    cursor: pointer;
+    transition:
+        color 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.steam-database__filter-list button:hover {
+    border-color: var(--database-lime);
+}
+
+.steam-database__filter-list button.is-active {
+    border-color: var(--database-lime);
+    color: #081004;
+    background: var(--database-lime);
+    box-shadow: 0 0 22px rgb(168 255 36 / 17%);
+}
+
+/* Diagram */
+
+.steam-database__diagram {
+    overflow: hidden;
+    border: 1px solid var(--database-border);
+    border-radius: 9px;
+    background: var(--database-panel);
+}
+
+.steam-database__diagram-header {
+    display: flex;
+    min-height: 62px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--database-border);
+}
+
+.steam-database__diagram-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.steam-database__zoom {
+    display: flex;
+    height: 40px;
+    overflow: hidden;
+    border: 1px solid #40505f;
+    border-radius: 7px;
+}
+
+.steam-database__zoom button {
+    width: 42px;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.steam-database__zoom span {
+    display: grid;
+    min-width: 70px;
+    place-items: center;
+    border-right: 1px solid #40505f;
+    border-left: 1px solid #40505f;
+    font-size: 13px;
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.steam-database__zoom span.is-changing {
+    color: var(--database-lime);
+    transform: translateY(-2px);
+}
+
+.steam-database__reset,
+.steam-database__open {
+    height: 40px;
+    padding-inline: 22px;
+    border: 1px solid #536575;
+    border-radius: 7px;
+    color: #f5f7fa;
+    background: transparent;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition:
+        border-color 220ms ease,
+        color 220ms ease;
+}
+
+.steam-database__reset:hover,
+.steam-database__open:hover {
+    border-color: var(--database-lime);
+    color: var(--database-lime);
+}
+
+.steam-database__stage {
+    position: relative;
+    height: 650px;
+    min-height: 650px;
+    overflow: hidden;
+}
+
+.steam-database__canvas {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    place-items: center;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+.steam-database__canvas.is-panning {
+    cursor: grabbing;
+}
+
+.steam-database__canvas.is-panning .steam-db-table {
+    pointer-events: none;
+}
+
+.steam-database__canvas>svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.steam-database__loading {
+    color: #8995a3;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* SVG states */
+
+.steam-db-table,
+.steam-db-relationship {
+    transition:
+        opacity 200ms ease,
+        filter 200ms ease,
+        transform 200ms ease;
+}
+
+.steam-db-table {
+    transform-box: fill-box;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.steam-db-table.is-dimmed,
+.steam-db-relationship.is-dimmed {
+    opacity: 0.1;
+}
+
+.steam-db-table.is-related {
+    opacity: 1;
+}
+
+.steam-db-table.is-selected {
+    opacity: 1;
+    filter:
+        brightness(1.08) drop-shadow(0 0 6px rgb(168 255 36 / 77%));
+}
+
+.steam-db-table.is-hovered {
+    transform: translateY(-2px);
+    filter:
+        brightness(1.16) drop-shadow(0 5px 10px rgb(0 0 0 / 35%));
+}
+
+.steam-db-table:focus {
+    outline: none;
+}
+
+
+/* เส้นเชื่อมสถานะปกติ */
+.steam-db-relationship>path {
+    fill: none !important;
+    stroke: #738190 !important;
+    stroke-width: 1.4 !important;
+    opacity: 0.8;
+    vector-effect: non-scaling-stroke;
+
+    transition:
+        stroke 200ms ease,
+        opacity 200ms ease,
+        filter 200ms ease;
+}
+
+/* เส้นที่ไม่เกี่ยวข้องหลังเลือก Filter */
+.steam-db-relationship.is-dimmed {
+    opacity: 0.1;
+}
+
+/* เส้นที่เกี่ยวข้องกับ Filter */
+.steam-db-relationship.is-related {
+    opacity: 1;
+}
+
+.steam-db-relationship.is-related>path {
+    stroke: var(--database-lime) !important;
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgb(168 255 36 / 55%));
+}
+
+/* เส้นที่เชื่อมกับตารางตอน Hover */
+.steam-db-relationship.is-hover-connected {
+    opacity: 1;
+}
+
+.steam-db-relationship.is-hover-connected>path {
+    stroke: var(--database-lime) !important;
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgb(168 255 36 / 75%));
+}
+
+.steam-db-relationship__main {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+}
+
+/* Animation วาดเฉพาะเส้นหลัก */
+.steam-db-relationship.is-drawing .steam-db-relationship__main {
+    stroke-dasharray: var(--relationship-length);
+    stroke-dashoffset: var(--relationship-length);
+    animation: steamDatabaseDrawLine 650ms ease forwards;
+}
+
+@keyframes steamDatabaseDrawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Tooltip */
+
+.steam-database__tooltip {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    min-width: 150px;
+    padding: 10px 13px;
+    border: 1px solid #566573;
+    border-radius: 7px;
+    color: #f5f7fa;
+    background: rgb(4 10 14 / 96%);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 40%);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(12px, 12px);
+    transition: opacity 180ms ease;
+}
+
+.steam-database__tooltip.is-visible {
+    opacity: 1;
+}
+
+.steam-database__tooltip strong,
+.steam-database__tooltip span {
+    display: block;
+}
+
+.steam-database__tooltip strong {
+    color: var(--database-lime);
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.steam-database__tooltip span {
+    margin-top: 3px;
+    color: #b4bfcc;
+    font-size: 11px;
+}
+.insight {
+    padding: 18px 30px;
+    border-bottom: 1px solid #454b54;
+    border-left: 7px solid var(--steam-green);
+    margin-top: 24px;
+    background: linear-gradient(90deg,
+            rgb(170 255 44 / 5%),
+            transparent 45%);
+}
+
+.insight strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--steam-green);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.insight p {
+    margin: 0;
+    color: var(--steam-muted);
+    line-height: 1.5;
+}

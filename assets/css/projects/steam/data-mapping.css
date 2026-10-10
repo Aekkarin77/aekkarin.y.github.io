@@ -1,0 +1,369 @@
+/* ========================================
+   UI–Data Mapping
+======================================== */
+
+.steam-mapping__header {
+    display: grid;
+    gap: clamp(30px, 2vw, 130px);
+    align-items: end;
+}
+
+.steam-mapping__header .section-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.05;
+}
+
+.steam-mapping__introduction {
+    max-width: 960px;
+    padding-left: 40px;
+    border-left: 1px solid #515761;
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+}
+
+/* ========================================
+   Shared tab index
+======================================== */
+
+.steam-tab-index {
+    position: relative;
+    display: flex;
+    margin-top: clamp(30px, 3vw, 70px);
+    border-bottom: 1px solid #49505a;
+}
+
+.steam-tab-index__indicator {
+    position: absolute;
+    z-index: 2;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--steam-green);
+    box-shadow: 0 0 12px rgb(170 255 44 / 25%);
+    pointer-events: none;
+    transition:
+        width 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.steam-tab-index__button {
+    min-width: 180px;
+    padding: 18px 34px;
+    border: 0;
+    background: transparent;
+    color: #818a9a;
+    cursor: pointer;
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    transition:
+        color 225ms ease,
+        background-color 225ms ease;
+}
+
+.steam-tab-index__button:hover {
+    background: rgb(255 255 255 / 3%);
+    color: var(--steam-text);
+}
+
+.steam-tab-index__button.is-active {
+    color: var(--steam-green);
+}
+
+/* ========================================
+   Mapping table
+======================================== */
+
+.steam-mapping__panel {
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.steam-mapping__panel.is-changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.steam-mapping__head {
+    display: grid;
+    grid-template-columns:
+        minmax(300px, 0.9fr) minmax(330px, 1.1fr) minmax(400px, 1.4fr);
+    padding: 28px 25px 14px 130px;
+    border-bottom: 1px solid #454b54;
+    color: #ccd2dc;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.steam-mapping__row {
+    display: grid;
+    grid-template-columns:
+        110px minmax(280px, 0.9fr) minmax(330px, 1.1fr) 70px minmax(400px, 1.4fr);
+    align-items: center;
+    min-height: 90px;
+    padding-inline: 20px;
+    margin: 12px 0 12px;
+    border-bottom: 1px solid #454b54;
+}
+
+.steam-mapping__number {
+    color: #858d9c;
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.steam-mapping__screen {
+    color: var(--steam-text);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-weight: 650;
+}
+
+.steam-mapping__action {
+    max-width: 420px;
+    color: var(--steam-muted);
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    line-height: 1.45;
+}
+
+.steam-mapping__arrow {
+    color: #aeb6c4;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.steam-mapping__entities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+
+/* ========================================
+   Entity pills
+======================================== */
+
+.steam-entity-pill {
+    padding: 8px 21px;
+    border: 1px solid #7a8391;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--steam-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    transition:
+        opacity 225ms ease,
+        color 225ms ease,
+        border-color 225ms ease,
+        background-color 225ms ease,
+        box-shadow 225ms ease,
+        transform 225ms ease;
+}
+
+.steam-entity-pill:hover,
+.steam-entity-pill:focus-visible,
+.steam-entity-pill.is-highlighted {
+    border-color: var(--steam-green);
+    background: rgb(170 255 44 / 10%);
+    color: var(--steam-green);
+    box-shadow: 0 0 14px rgb(170 255 44 / 12%);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* ลด opacity ของ entity อื่น */
+.steam-mapping.has-focused-entity .steam-entity-pill:not(.is-highlighted) {
+    opacity: 0.35;
+}
+
+/* ========================================
+   Data relationship
+======================================== */
+
+.steam-mapping__relationship {
+    padding: 18px 30px;
+    border-bottom: 1px solid #454b54;
+    border-left: 7px solid var(--steam-green);
+    background: linear-gradient(90deg,
+            rgb(170 255 44 / 5%),
+            transparent 45%);
+}
+
+.steam-mapping__relationship strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--steam-green);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.steam-mapping__relationship p {
+    margin: 0;
+    color: var(--steam-muted);
+    line-height: 1.5;
+}
+
+/* ========================================
+   Mapping animation
+======================================== */
+
+.js .steam-mapping__row {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.js .steam-mapping__row>* {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+.steam-mapping__panel.is-rendered .steam-mapping__row {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 500ms ease var(--row-delay),
+        transform 500ms cubic-bezier(0.22, 1, 0.36, 1) var(--row-delay);
+}
+
+/* ภายในแต่ละแถว:
+   number → screen → action → arrow → entities */
+
+.steam-mapping__panel.is-rendered .steam-mapping__row> :nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 400ms ease calc(var(--row-delay) + 80ms),
+        transform 400ms ease calc(var(--row-delay) + 80ms);
+}
+
+.steam-mapping__panel.is-rendered .steam-mapping__row> :nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 400ms ease calc(var(--row-delay) + 160ms),
+        transform 400ms ease calc(var(--row-delay) + 160ms);
+}
+
+.steam-mapping__panel.is-rendered .steam-mapping__row> :nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 400ms ease calc(var(--row-delay) + 240ms),
+        transform 400ms ease calc(var(--row-delay) + 240ms);
+}
+
+.steam-mapping__panel.is-rendered .steam-mapping__row> :nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 400ms ease calc(var(--row-delay) + 320ms),
+        transform 400ms ease calc(var(--row-delay) + 320ms);
+}
+
+.steam-mapping__panel.is-rendered .steam-mapping__row> :nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 400ms ease calc(var(--row-delay) + 400ms),
+        transform 400ms ease calc(var(--row-delay) + 400ms);
+}
+
+/* ========================================
+   Entity tooltip
+======================================== */
+
+.steam-entity-tooltip {
+    position: fixed;
+    z-index: 100;
+    width: min(310px, calc(100vw - 32px));
+    padding: 14px 16px;
+    border: 1px solid rgb(170 255 44 / 35%);
+    border-radius: 8px;
+    background: #151a20;
+    box-shadow: 0 16px 40px rgb(0 0 0 / 40%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition:
+        opacity 160ms ease,
+        visibility 160ms ease,
+        transform 160ms ease;
+}
+
+.steam-entity-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.steam-entity-tooltip strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--steam-green);
+    font-size: 0.85rem;
+}
+
+.steam-entity-tooltip p {
+    margin: 0;
+    color: var(--steam-muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+
+/* ========================================
+   Mapping heading masked reveal
+======================================== */
+
+.steam-mapping__title {
+    display: block;
+    overflow: hidden;
+}
+
+
+/* สถานะก่อน section เข้ามาในหน้าจอ */
+.js .steam-mapping__title {
+    opacity: 0;
+    transform: translateY(110%);
+}
+
+/* บรรทัดแรก */
+.steam-mapping.is-visible .steam-mapping__title:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 650ms ease 80ms,
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+}
+
+/* บรรทัดที่สอง */
+.steam-mapping.is-visible .steam-mapping__title:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 650ms ease 190ms,
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 190ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .steam-mapping__row,
+    .js .steam-mapping__row>* {
+        opacity: 1;
+        transform: none;
+    }
+
+    .steam-tab-index__indicator,
+    .steam-mapping__panel {
+        transition: none;
+    }
+}

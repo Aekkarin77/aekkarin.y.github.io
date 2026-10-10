@@ -1,0 +1,119 @@
+/* Responsive rules are kept separate from section styles. */
+
+@media (hover: hover) {
+    .high-fi-phone:hover>img {
+        transform:
+            translateY(-8px) scale(1.025);
+
+        filter:
+            drop-shadow(0 24px 28px rgb(31 24 62 / 14%));
+    }
+
+    .high-fi-showcase:hover .high-fi-phone:not(:hover)>img {
+        opacity: 0.55;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .case-study-info {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .case-study-info dd {
+        font-size: 1rem;
+    }
+
+    .sub-text {
+        font-size: 1.125rem;
+    }
+
+    .timeline__track {
+        padding: 56px 0 0;
+    }
+
+    .timeline__line--mobile {
+        display: none;
+    }
+
+    .timeline__line--desktop {
+        top: 20px;
+        right: 10%;
+        left: 10%;
+        display: block;
+        height: 2.5px;
+    }
+
+    .timeline__line--desktop span {
+        width: 0;
+        height: 100%;
+    }
+
+    .timeline__nodes {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 32px;
+    }
+
+    .timeline__node {
+        text-align: center;
+    }
+
+    .timeline__badge {
+        top: -52px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline__node:hover .timeline__badge,
+    .timeline__node.is-active .timeline__badge {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    .timeline__node h3 {
+        padding-top: 16px;
+    }
+
+    .timeline__method {
+        font-size: 0.875rem;
+    }
+
+    .timeline__tooltip {
+        left: 50%;
+        width: 256px;
+        text-align: left;
+        transform: translate(-50%, 8px);
+    }
+
+    .timeline__node:hover .timeline__tooltip {
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (min-width: 1024px) {
+    .case-study-hero__grid {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+        gap: clamp(64px, 4vw, 120px);
+        align-items: center;
+    }
+
+    .case-study-hero__content {
+        min-width: 0;
+    }
+
+    .case-study-hero__visual {
+        min-width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline__node {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}

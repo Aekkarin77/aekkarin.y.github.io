@@ -1,0 +1,384 @@
+/* ========================================
+   Proposed UI
+======================================== */
+
+/* Top area */
+.steam-showcase__figma {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 17px 28px;
+    border: 1px solid var(--steam-green);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--steam-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+        border-color 225ms ease,
+        background-color 500ms ease;
+}
+
+
+.steam-showcase__figma:hover {
+    background: var(--steam-green);
+    color: var(--steam-bg);
+}
+
+.figma-button__arrow img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+
+    object-fit: contain;
+}
+
+.steam-showcase__figma:hover .figma-button__arrow>img:last-child {
+    transform: translate(2px, -2px);
+    filter: brightness(0) invert(0);
+
+}
+
+/* ========================================
+   Heading
+======================================== */
+
+.steam-showcase__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+    align-items: end;
+}
+
+.steam-showcase__header .section-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.05;
+}
+
+/* ========================================
+   Main layout
+======================================== */
+
+.steam-showcase__layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) minmax(300px, 360px);
+    gap: clamp(35px, 4vw, 65px);
+    align-items: stretch;
+    margin-top: clamp(55px, 7vw, 50px);
+}
+
+.steam-showcase__viewer {
+    min-width: 0;
+}
+
+/* ========================================
+   Horizontal screen index
+======================================== */
+
+.steam-screen-index {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 24px;
+    border-bottom: 1px solid #4d535d;
+}
+
+.steam-screen-index__indicator {
+    position: absolute;
+    z-index: 2;
+    bottom: -1px;
+    left: 0;
+    width: 25%;
+    height: 3px;
+    background: var(--steam-green);
+    box-shadow: 0 0 12px rgb(170 255 44 / 30%);
+    pointer-events: none;
+    transition:
+        width 450ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.steam-screen-index__button {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px 18px;
+    border: 0;
+    background: transparent;
+    color: #8993a4;
+    cursor: pointer;
+    text-align: left;
+    text-transform: uppercase;
+    transition:
+        color 225ms ease,
+        background-color 225ms ease;
+}
+
+.steam-screen-index__button:hover {
+    background: rgb(255 255 255 / 3%);
+    color: var(--steam-text);
+}
+
+.steam-screen-index__button span {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+}
+
+.steam-screen-index__button strong {
+    overflow: hidden;
+    color: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.steam-screen-index__button.is-active {
+    color: var(--steam-text);
+}
+
+.steam-screen-index__button.is-active span {
+    color: var(--steam-green);
+}
+
+/* Screen index stagger */
+
+.js .steam-screen-index__button {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+.steam-showcase.is-visible .steam-screen-index__button {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 450ms ease var(--index-delay),
+        transform 450ms cubic-bezier(0.22, 1, 0.36, 1) var(--index-delay),
+        color 225ms ease,
+        background-color 225ms ease;
+}
+
+/* ========================================
+   Screen preview — 1280 × 844
+======================================== */
+
+.steam-screen-preview {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 1280 / 844;
+    overflow: hidden;
+    border: 1px solid #657080;
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at center,
+            #202832,
+            #111820 75%);
+}
+
+.steam-screen-preview__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transform: translateX(18px) scale(0.995);
+    transition:
+        opacity 450ms ease,
+        transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.steam-screen-preview__image.is-active {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.steam-screen-preview__image.is-previous {
+    opacity: 0;
+    transform: translateX(-18px) scale(0.995);
+}
+
+/* ========================================
+   Screen details
+======================================== */
+
+.steam-screen-details {
+    display: grid;
+    min-width: 0;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    align-self: stretch;
+}
+
+.steam-screen-details__content {
+    min-height: 0;
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.steam-screen-details__content.is-changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.steam-screen-details__eyebrow {
+    margin: 5px 0 14px;
+    color: #aab3c2;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.steam-screen-details h3 {
+    margin: 0 0 22px;
+    color: var(--steam-text);
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    line-height: 1.1;
+}
+
+.steam-screen-details__content .section-description {
+    margin: 0;
+}
+
+.steam-screen-details ul {
+    display: grid;
+    gap: 18px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.steam-screen-details li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--steam-muted);
+    line-height: 1.45;
+}
+
+.steam-screen-details li::before {
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--steam-green);
+    content: "";
+    transform: translateY(-50%);
+}
+
+/* ========================================
+   Fixed screen navigation
+======================================== */
+.steam-screen-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: end;
+    margin-top: 28px;
+    padding-block: 20px;
+    border-top: 1px solid #56606d;
+    border-bottom: 1px solid #56606d;
+}
+
+.steam-screen-navigation button {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid #748091;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition:
+        border-color 225ms ease,
+        background-color 225ms ease;
+}
+
+.steam-screen-navigation button:hover {
+    border-color: var(--steam-green);
+    background: rgb(170 255 44 / 6%);
+}
+
+.steam-screen-navigation button img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+
+    /* เปลี่ยนไอคอนสีดำเป็นสีขาว */
+    filter: brightness(0) invert(1);
+
+    transition:
+        filter 225ms ease,
+        transform 225ms ease;
+}
+
+/* เปลี่ยนไอคอนเป็นสีเขียวตอน hover */
+.steam-screen-navigation button:hover img {
+    filter:
+        brightness(0) saturate(100%) invert(88%) sepia(92%) saturate(1300%) hue-rotate(32deg) brightness(108%) contrast(105%);
+}
+
+/* หมุนไอคอนของปุ่ม Next */
+.steam-screen-navigation__button--next img {
+    transform: rotate(180deg);
+}
+
+/* Previous hover */
+.steam-screen-navigation__button--previous:hover img {
+    transform: translateX(-2px);
+}
+
+/* Next hover */
+.steam-screen-navigation__button--next:hover img {
+    transform: translateX(2px) rotate(180deg);
+}
+
+.steam-screen-navigation p {
+    margin: 0;
+    color: #9da7b7;
+    letter-spacing: 0.14em;
+}
+
+.steam-screen-navigation strong {
+    color: var(--steam-green);
+}
+
+.steam-screen-details__caption {
+    min-height: 20px;
+    margin: 16px 0 0;
+    color: #717b8c;
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   Reduced motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .js .steam-screen-index__button {
+        opacity: 1;
+        transform: none;
+    }
+
+    .steam-screen-index__indicator,
+    .steam-screen-preview__image,
+    .steam-screen-details__content {
+        transition: none;
+    }
+}

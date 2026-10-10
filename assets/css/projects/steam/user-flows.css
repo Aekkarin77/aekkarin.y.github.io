@@ -1,0 +1,303 @@
+/* ========================================
+   User Flows
+======================================== */
+
+
+.steam-flows__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: clamp(50px, 9vw, 150px);
+    align-items: end;
+}
+
+.steam-flows__header .section-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.05;
+}
+
+.steam-flows__title,
+.steam-flows__introduction {
+    display: block;
+    overflow: hidden;
+}
+
+.steam-flows__introduction {
+    max-width: 540px;
+    font-size: clamp(1.1rem, 1.65vw, 1.6rem);
+}
+
+.steam-flows__list {
+    margin-top: clamp(55px, 6vw, 85px);
+}
+
+.steam-flow-row {
+    display: grid;
+    grid-template-columns: 225px minmax(900px, 1fr);
+    gap: clamp(35px, 4vw, 65px);
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #3d4148;
+}
+
+.steam-flow-row__role {
+    align-self: stretch;
+    padding-right: 30px;
+    border-right: 1px solid #454a52;
+    cursor: default;
+}
+
+.steam-flow-row__role>span {
+    display: block;
+    color: var(--steam-green);
+    font-size: clamp(3.2rem, 4vw, 4rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.steam-flow-row__role h3 {
+    margin: 10px 0 0;
+    color: var(--steam-text);
+    font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+    font-weight: 750;
+    text-transform: uppercase;
+}
+
+.steam-flow-track {
+    display: grid;
+    grid-template-columns:
+        minmax(115px, 1fr) minmax(75px, 0.75fr) minmax(115px, 1fr) minmax(75px, 0.75fr) minmax(115px, 1fr) minmax(75px, 0.75fr) minmax(115px, 1fr) minmax(75px, 0.75fr) minmax(115px, 1fr);
+    align-items: start;
+}
+
+.steam-flow-step {
+    min-width: 0;
+    text-align: center;
+}
+
+.steam-flow-step__number {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin-inline: auto;
+    place-items: center;
+    border: 2px solid #aab2c1;
+    border-radius: 50%;
+    color: var(--steam-text);
+    font-weight: 700;
+}
+
+.steam-flow-step p {
+    margin: 14px auto 0;
+    color: var(--steam-muted);
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    line-height: 1.3;
+}
+
+.steam-flow-step--outcome .steam-flow-step__number {
+    border-color: var(--steam-green);
+    color: var(--steam-green);
+}
+
+.steam-flow-step--outcome p {
+    color: var(--steam-green);
+    font-weight: 700;
+}
+
+.steam-flow-connector {
+    position: relative;
+    display: block;
+    height: 52px;
+    overflow: hidden;
+}
+
+/* เส้นพื้นฐาน */
+.steam-flow-connector>span {
+    position: absolute;
+    top: 25px;
+    right: 11px;
+    left: 0;
+    height: 1px;
+    background: #777e89;
+    transform-origin: left;
+}
+
+/* หัวลูกศร */
+.steam-flow-connector::after {
+    position: absolute;
+    top: 21px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #777e89;
+    border-right: 1px solid #777e89;
+    content: "";
+    transform: rotate(45deg);
+}
+
+/* เส้นสีเขียวสำหรับ replay */
+.steam-flow-connector::before {
+    position: absolute;
+    z-index: 1;
+    top: 24px;
+    left: 0;
+    width: 35%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--steam-green));
+    content: "";
+    opacity: 0;
+    transform: translateX(-120%);
+}
+
+/* ========================================
+   Initial animation state
+======================================== */
+
+.js .steam-flow-row__role,
+.js .steam-flow-step {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+.js .steam-flow-connector {
+    opacity: 0;
+}
+
+.js .steam-flow-connector>span {
+    transform: scaleX(0);
+}
+
+.js .steam-flow-connector::after {
+    opacity: 0;
+}
+
+.js .steam-flow-step--outcome {
+    --outcome-scale: 1;
+
+    transform:
+        translateY(18px) scale(var(--outcome-scale));
+}
+
+.js .steam-flows__title,
+.js .steam-flows__introduction {
+    opacity: 0;
+    transform: translateY(110%);
+}
+
+
+/* ========================================
+   Step-by-step reveal
+======================================== */
+
+.steam-flows.is-visible .steam-flows__title,
+.steam-flows.is-visible .steam-flows__introduction {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 650ms ease 80ms,
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+}
+
+.steam-flows.is-visible .steam-flow-row__role {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 450ms ease var(--row-delay),
+        transform 450ms cubic-bezier(0.22, 1, 0.36, 1) var(--row-delay);
+}
+
+.steam-flows.is-visible .steam-flow-step {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 420ms ease var(--item-delay),
+        transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--item-delay);
+}
+
+.steam-flows.is-visible .steam-flow-connector {
+    opacity: 1;
+    transition: opacity 100ms linear var(--item-delay);
+}
+
+.steam-flows.is-visible .steam-flow-connector>span {
+    transform: scaleX(1);
+    transition:
+        transform 380ms cubic-bezier(0.22, 1, 0.36, 1) var(--item-delay);
+}
+
+.steam-flows.is-visible .steam-flow-connector::after {
+    opacity: 1;
+    transition: opacity 150ms ease calc(var(--item-delay) + 300ms);
+}
+
+/* Final outcome pulse ครั้งเดียว */
+.steam-flows.is-visible .steam-flow-step--outcome .steam-flow-step__number {
+    animation: steamOutcomePulse 650ms ease calc(var(--item-delay) + 300ms) 1 both;
+}
+
+@keyframes steamOutcomePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgb(170 255 44 / 0%);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgb(170 255 44 / 12%);
+        transform: scale(1.08);
+    }
+}
+
+/* ========================================
+   Replay line on role hover
+======================================== */
+
+.steam-flow-row__role:hover~.steam-flow-track .steam-flow-connector::before {
+    animation: steamFlowReplay 480ms ease-out var(--sweep-delay) 1 both;
+}
+
+@keyframes steamFlowReplay {
+    0% {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(330%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .steam-flow-row__role,
+    .js .steam-flow-step,
+    .js .steam-flow-connector {
+        opacity: 1;
+        transform: none;
+    }
+
+    .js .steam-flow-connector>span {
+        transform: none;
+    }
+
+    .js .steam-flow-connector::after {
+        opacity: 1;
+    }
+
+    .steam-flows.is-visible .steam-flow-step--outcome .steam-flow-step__number,
+    .steam-flow-row__role:hover~.steam-flow-track .steam-flow-connector::before {
+        animation: none;
+    }
+}

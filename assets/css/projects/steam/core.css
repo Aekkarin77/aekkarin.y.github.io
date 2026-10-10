@@ -1,0 +1,79 @@
+:root {
+    --steam-bg: #030708;
+    --steam-panel: #071016;
+    --steam-panel-light: #0c171e;
+    --steam-panel-raised: #121a23;
+    --steam-text: #f5f7fa;
+    --steam-text-soft: #d6deea;
+    --steam-muted: #aeb7c5;
+    --steam-muted-dark: #738190;
+    --steam-border: #34414d;
+    --steam-border-light: #40505f;
+    --steam-border-strong: #536575;
+    --steam-green: #aaff2c;
+    --steam-green-hover: #c2ff5c;
+    --steam-cyan: #56ddef;
+    --steam-purple: #9879ff;
+    --steam-green-05: rgb(170 255 44 / 5%);
+    --steam-green-08: rgb(170 255 44 / 8%);
+    --steam-green-12: rgb(170 255 44 / 12%);
+    --steam-green-30: rgb(170 255 44 / 30%);
+    --steam-green-55: rgb(170 255 44 / 55%);
+    --steam-duration-fast: 200ms;
+    --steam-duration-normal: 350ms;
+    --steam-duration-slow: 700ms;
+    --steam-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --steam-radius-small: 7px;
+    --steam-radius-medium: 9px;
+    --steam-radius-large: 12px;
+}
+
+body {
+    background: var(--steam-bg);
+    color: var(--steam-text);
+}
+
+
+
+.steam-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    overflow-x: clip;
+    overflow-y: visible;
+    background:
+        radial-gradient(circle at 50% 48%,
+            rgb(38 44 48 / 18%),
+            transparent 38%),
+        var(--steam-bg);
+}
+
+
+.steam-page .section-description {
+    margin: 0;
+    color: var(--steam-muted);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.55;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 26px;
+    color: #cbd0da;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin: 0;
+    color: var(--steam-text);
+    font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+

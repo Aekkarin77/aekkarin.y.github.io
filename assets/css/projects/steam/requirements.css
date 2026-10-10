@@ -1,0 +1,272 @@
+/* ========================================
+   Users & Requirements
+======================================== */
+
+.steam-roles__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.steam-roles__title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.05;
+}
+
+.steam-roles__title-line {
+    display: block;
+    overflow: hidden;
+}
+
+.steam-roles__title-line>span {
+    display: block;
+}
+
+.steam-roles__introduction {
+    max-width: 100%;
+    padding-bottom: 4px;
+    font-size: clamp(1.1rem, 1.65vw, 1.6rem);
+    line-height: 1.55;
+}
+
+.steam-roles__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: clamp(55px, 4vw, 85px);
+}
+
+.steam-role {
+    position: relative;
+    min-width: 0;
+    padding-right: clamp(30px, 4vw, 60px);
+    transition: transform 225ms ease;
+}
+
+.steam-role+.steam-role {
+    padding-left: clamp(30px, 4vw, 60px);
+}
+
+/* เส้นคั่นด้านขวาของคอลัมน์ */
+.steam-role:not(:last-child)::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #4b5058;
+    content: "";
+    transform-origin: top;
+    transition: background-color 225ms ease;
+}
+
+.steam-role__number {
+    overflow: hidden;
+    color: var(--steam-green);
+    font-size: clamp(3.8rem, 5.5vw, 5.3rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    transition:
+        color 225ms ease,
+        filter 225ms ease;
+}
+
+.steam-role__number>span {
+    display: block;
+}
+
+.steam-role__body h3 {
+    margin: 20px 0 10px;
+    color: var(--steam-text);
+    font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+    font-weight: 750;
+    line-height: 1.1;
+}
+
+.steam-role__description {
+    min-height: 3.1em;
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+}
+
+.steam-role__requirements {
+    display: grid;
+    gap: 18px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.steam-role__requirements li {
+    position: relative;
+    padding-left: 40px;
+    color: var(--steam-muted);
+    font-size: clamp(0.95rem, 1.2vw, 1.12rem);
+    line-height: 1.45;
+    transition:
+        color 225ms ease,
+        transform 225ms ease;
+}
+
+.steam-role__requirements li::before {
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--steam-green);
+    content: "";
+    transform: translateY(-50%);
+    transition:
+        width 225ms ease,
+        height 225ms ease,
+        box-shadow 225ms ease;
+}
+
+/* ========================================
+   Hover interaction
+======================================== */
+
+.steam-role:hover {
+    transform: translateY(-4px);
+}
+
+.steam-role:hover .steam-role__number {
+    color: #c3ff61;
+    filter: drop-shadow(0 0 8px rgb(170 255 44 / 22%));
+}
+
+.steam-role:not(:last-child):hover::after {
+    background: rgb(170 255 44 / 70%);
+}
+
+.steam-role:hover .steam-role__requirements li {
+    color: var(--steam-text);
+    transform: translateX(4px);
+}
+
+.steam-role:hover .steam-role__requirements li::before {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 10px rgb(170 255 44 / 30%);
+}
+
+/* ========================================
+   Initial animation state
+======================================== */
+
+.js .steam-roles__title-line>span,
+.js .steam-roles__introduction,
+.js .steam-role,
+.js .steam-role__requirements li {
+    opacity: 0;
+}
+
+.js .steam-roles__title-line>span {
+    transform: translateY(110%);
+}
+
+.js .steam-roles__introduction {
+    transform: translateY(20px);
+}
+
+.js .steam-role {
+    transform: translateY(28px);
+}
+
+.js .steam-role__number>span {
+    transform: translateY(110%);
+}
+
+.js .steam-role__requirements li {
+    transform: translateY(12px);
+}
+
+.js .steam-role:not(:last-child)::after {
+    transform: scaleY(0);
+}
+
+/* ========================================
+   Animation when section is visible
+======================================== */
+
+/* Main heading masked reveal */
+.steam-roles.is-visible .steam-roles__title-line:nth-child(1)>span {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 650ms ease 80ms,
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+}
+
+.steam-roles.is-visible .steam-roles__title-line:nth-child(2)>span {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 650ms ease 190ms,
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 190ms;
+}
+
+.steam-roles.is-visible .steam-roles__introduction {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 600ms ease 270ms,
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1) 270ms;
+}
+
+/* Role columns stagger */
+.steam-roles.is-visible .steam-role {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 550ms ease var(--role-delay),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1) var(--role-delay);
+}
+
+/* Role number clip reveal */
+.steam-roles.is-visible .steam-role__number>span {
+    transform: translateY(0);
+    transition:
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1) calc(var(--role-delay) + 80ms);
+}
+
+/* Vertical divider draw */
+.steam-roles.is-visible .steam-role:not(:last-child)::after {
+    transform: scaleY(1);
+    transition:
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1) calc(var(--role-delay) + 180ms),
+        background-color 225ms ease;
+}
+
+/* Requirements stagger */
+.steam-roles.is-visible .steam-role__requirements li {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 450ms ease var(--requirement-delay),
+        transform 450ms cubic-bezier(0.22, 1, 0.36, 1) var(--requirement-delay),
+        color 225ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .steam-roles__title-line>span,
+    .js .steam-roles__introduction,
+    .js .steam-role,
+    .js .steam-role__number>span,
+    .js .steam-role__requirements li {
+        opacity: 1;
+        transform: none;
+    }
+
+    .js .steam-role:not(:last-child)::after {
+        transform: none;
+    }
+
+    .steam-roles.is-visible *,
+    .steam-roles.is-visible *::after {
+        transition: none;
+    }
+}

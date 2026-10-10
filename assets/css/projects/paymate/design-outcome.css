@@ -1,0 +1,476 @@
+/* =====================================================
+   Design Outcome
+===================================================== */
+
+.design-outcome {
+    --design-mint: #22dca0;
+    --design-dark: #062d22;
+    --design-copy: #69719b;
+    --design-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* Header */
+
+.design-outcome__header {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.35fr) minmax(340px, 0.75fr);
+    gap: clamp(50px, 8vw, 130px);
+    align-items: end;
+    margin-bottom: 38px;
+}
+
+
+.design-outcome__heading h2 {
+    margin: 0;
+    color: var(--design-dark);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 750;
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+}
+
+.design-outcome__heading em {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.03em 0.09em;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+}
+
+.design-outcome__heading em::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.065em;
+    border-radius: 999px;
+    background: var(--design-mint);
+    content: "";
+    transform: scaleX(0) rotate(-2deg);
+    transform-origin: left center;
+}
+
+.design-outcome__introduction {
+    display: grid;
+    gap: 22px;
+}
+
+.design-outcome__introduction p {
+    margin: 0;
+    color: var(--design-copy);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.5;
+}
+
+/* Figma button */
+
+.figma-button {
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 28px;
+    border-radius: 18px;
+    background:
+        linear-gradient(120deg,
+            #003f26,
+            #00633b);
+    color: #fff;
+    box-shadow: 0 18px 40px rgb(0 75 43 / 16%);
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition:
+        transform 300ms var(--design-ease),
+        box-shadow 300ms ease,
+        background-color 300ms ease;
+}
+
+.figma-button__logo {
+    display: block;
+    width: 27px;
+    height: 40px;
+    flex: 0 0 27px;
+    object-fit: contain;
+}
+
+.figma-button__arrow {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+
+    object-fit: contain;
+}
+
+.figma-button:hover .figma-button__arrow>img:last-child {
+    transform: translate(3px, -3px);
+}
+
+.figma-button:hover,
+.figma-button:focus-visible {
+    box-shadow: 0 25px 48px rgb(0 75 43 / 40%);
+
+}
+
+
+/* Initial header states */
+
+.js .design-outcome__label,
+.js .design-outcome__heading h2,
+.js .design-outcome__introduction p,
+.js .figma-button {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.design-outcome.is-visible .design-outcome__label {
+    animation:
+        design-fade-up 650ms var(--design-ease) both;
+}
+
+.design-outcome.is-visible .design-outcome__heading h2 {
+    animation:
+        design-fade-up 750ms var(--design-ease) 100ms both;
+}
+
+.design-outcome.is-visible .design-outcome__introduction p {
+    animation:
+        design-fade-up 700ms var(--design-ease) 220ms both;
+}
+
+.design-outcome.is-visible .figma-button {
+    animation:
+        design-fade-up 700ms var(--design-ease) 380ms both;
+}
+
+.design-outcome.is-visible .design-outcome__heading em::after {
+    animation:
+        design-underline 700ms var(--design-ease) 650ms both;
+}
+
+/* Three screens */
+
+.design-screens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 60px);
+}
+
+.design-screen {
+    position: relative;
+    min-width: 0;
+    padding-top: 18px;
+    text-align: center;
+    outline: none;
+    transition:
+        opacity 350ms ease,
+        transform 400ms var(--design-ease),
+        filter 350ms ease;
+}
+
+/* Requirement label */
+
+.design-screen__requirement {
+    position: relative;
+    left: -108px;
+    z-index: 6;
+    display: block;
+    margin: 0 auto -6px;
+    padding: 9px 28px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: rgb(38 223 161 / 11%);
+    color: #263664;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition:
+        border-color 250ms ease,
+        background-color 250ms ease,
+        color 250ms ease,
+        transform 250ms var(--design-ease);
+}
+
+.design-screen__requirement:hover,
+.design-screen__requirement:focus-visible,
+.design-screen.is-focused .design-screen__requirement {
+    border-color: rgb(38 223 161 / 58%);
+    background: rgb(214 255 238 / 90%);
+    color: #00442e;
+    transform: translateY(-2px);
+}
+
+/* Connector */
+
+.design-screen__connector {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: min(100%, 360px);
+    height: 64px;
+    margin: 0 auto -30px;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.design-screen__connector path {
+    fill: none;
+    stroke: var(--design-mint);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+}
+
+.design-screen__connector circle {
+    fill: var(--design-mint);
+    opacity: 0;
+}
+
+.design-outcome.is-visible .design-screen__connector path {
+    animation:
+        design-draw-line 650ms var(--design-ease) forwards;
+}
+
+.design-outcome.is-visible .design-screen__connector circle {
+    animation:
+        design-point-in 250ms ease forwards;
+}
+
+/* Connector delay left - right */
+
+.design-outcome.is-visible .design-screen:nth-child(1) .design-screen__connector path {
+    animation-delay: 1150ms;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(2) .design-screen__connector path {
+    animation-delay: 1320ms;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(3) .design-screen__connector path {
+    animation-delay: 1490ms;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(1) .design-screen__connector circle {
+    animation-delay: 1740ms;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(2) .design-screen__connector circle {
+    animation-delay: 1910ms;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(3) .design-screen__connector circle {
+    animation-delay: 2080ms;
+}
+
+/* Phone */
+
+.design-screen__phone {
+    position: relative;
+    z-index: 4;
+    width: min(100%, 230px);
+    margin-inline: auto;
+    transform-origin: center bottom;
+    transition:
+        transform 400ms var(--design-ease),
+        filter 350ms ease;
+}
+
+.design-screen__phone img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 22px 24px rgb(0 54 32 / 15%));
+}
+
+.design-screen__glow {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    width: 75%;
+    height: 70%;
+    border-radius: 50%;
+    background: rgb(38 223 161 / 14%);
+    filter: blur(45px);
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+    transition:
+        opacity 350ms ease,
+        transform 400ms var(--design-ease);
+}
+
+.design-screen h3 {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    margin: 12px 0 0;
+    color: #0b2820;
+    font-size: clamp(1.15rem, 2vw, 1.65rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    cursor: default;
+    transition:
+        color 250ms ease,
+        transform 250ms var(--design-ease);
+}
+
+/* Phone initial state */
+
+.js .design-screen__phone,
+.js .design-screen h3,
+.js .design-screen__requirement {
+    opacity: 0;
+    transform: translateY(42px);
+}
+
+/* Stagger reveal */
+
+.design-outcome.is-visible .design-screen:nth-child(1) .design-screen__phone,
+.design-outcome.is-visible .design-screen:nth-child(1) .design-screen__requirement,
+.design-outcome.is-visible .design-screen:nth-child(1) h3 {
+    animation:
+        design-phone-in 850ms var(--design-ease) 700ms both;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(2) .design-screen__phone,
+.design-outcome.is-visible .design-screen:nth-child(2) .design-screen__requirement,
+.design-outcome.is-visible .design-screen:nth-child(2) h3 {
+    animation:
+        design-phone-in 850ms var(--design-ease) 900ms both;
+}
+
+.design-outcome.is-visible .design-screen:nth-child(3) .design-screen__phone,
+.design-outcome.is-visible .design-screen:nth-child(3) .design-screen__requirement,
+.design-outcome.is-visible .design-screen:nth-child(3) h3 {
+    animation:
+        design-phone-in 850ms var(--design-ease) 1100ms both;
+}
+
+/* Requirement focus */
+
+.design-screens.has-focus .design-screen:not(.is-focused) {
+    opacity: 0.32;
+    filter: saturate(0.7);
+    transform: scale(0.97);
+}
+
+.design-screen.is-focused {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.design-screen.is-focused .design-screen__phone {
+    transform: scale(1.035);
+}
+
+.design-screen.is-focused .design-screen__glow {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.design-screen.is-focused h3 {
+    color: #006e49;
+    transform: translateY(-2px);
+}
+
+.design-screen.is-focused .design-screen__connector path {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 5px rgb(38 223 161 / 65%));
+}
+
+/* Animations */
+
+@keyframes design-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes design-phone-in {
+    from {
+        opacity: 0;
+        transform: translateY(42px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes design-underline {
+    from {
+        transform: scaleX(0) rotate(-2deg);
+    }
+
+    to {
+        transform: scaleX(1) rotate(-2deg);
+    }
+}
+
+@keyframes design-draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes design-point-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .design-outcome *,
+    .design-outcome *::before,
+    .design-outcome *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .js .design-outcome__label,
+    .js .design-outcome__heading h2,
+    .js .design-outcome__introduction p,
+    .js .figma-button,
+    .js .design-screen__phone,
+    .js .design-screen h3,
+    .js .design-screen__requirement {
+        opacity: 1;
+        transform: none;
+    }
+
+    .design-outcome__heading em::after {
+        transform: scaleX(1) rotate(-2deg);
+    }
+
+    .design-screen__connector path {
+        stroke-dashoffset: 0;
+    }
+
+    .design-screen__connector circle {
+        opacity: 1;
+    }
+}

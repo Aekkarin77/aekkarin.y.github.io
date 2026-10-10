@@ -1,0 +1,267 @@
+/* ========================================
+   High-Fidelity Design
+======================================== */
+
+.high-fidelity-section {
+    overflow: hidden;
+}
+
+.high-fi-header {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.25fr) minmax(360px, 0.75fr);
+
+    gap: clamp(64px, 8vw, 140px);
+    align-items: center;
+}
+
+
+.high-fi-features {
+    display: flex;
+    align-items: stretch;
+
+    margin-top: 20px;
+}
+
+.high-fi-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding-right: 20px;
+}
+
+.high-fi-feature+.high-fi-feature {
+    margin-left: 10px;
+    padding-left: 10px;
+
+    border-left:
+        1px solid rgb(105 75 245 / 14%);
+}
+
+.high-fi-feature__icon {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    background: #eee8ff;
+}
+
+.high-fi-feature__icon img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.high-fi-feature strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #17142f;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.high-fi-feature span {
+    display: block;
+
+    color: #817b98;
+
+    font-size: 0.72rem;
+}
+
+.high-fi-cta {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+
+    padding: 22px 24px;
+
+    border:
+        1px solid rgb(105 75 245 / 10%);
+
+    border-radius: 24px;
+
+    background:
+        rgb(255 255 255 / 70%);
+
+    box-shadow:
+        0 16px 42px rgb(74 53 135 / 6%);
+
+    transition:
+        transform 300ms var(--ease-out-smooth),
+        box-shadow 300ms ease;
+}
+
+.high-fi-cta:hover {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 22px 50px rgb(74 53 135 / 10%);
+}
+
+.high-fi-cta__icon {
+    display: block;
+    width: 27px;
+    height: 40px;
+    flex: 0 0 27px;
+    object-fit: contain;
+}
+
+
+
+.high-fi-cta__content strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #17142f;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.high-fi-cta__content span {
+    display: block;
+
+    max-width: 250px;
+
+    color: #817b98;
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+.high-fi-cta__arrow {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--color-play-n-learn);
+
+    transition:
+        transform 300ms var(--ease-out-smooth);
+}
+
+.high-fi-cta__arrow img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+
+    object-fit: contain;
+}
+
+.high-fi-cta:hover .high-fi-cta__arrow>img:last-child {
+    transform: translate(2px, -2px);
+}
+
+.high-fi-showcase {
+    display: grid;
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: clamp(18px, 2vw, 30px);
+
+    margin-top: 64px;
+    padding: 8px 4px 24px;
+}
+
+.high-fi-phone {
+    min-width: 0;
+    margin: 0;
+
+    opacity: 0;
+    transform: translateY(36px);
+
+    transition:
+        opacity 650ms ease,
+        transform 750ms var(--ease-out-smooth);
+}
+
+.high-fi-phone>img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(0 16px 20px rgb(31 24 62 / 9%));
+}
+
+.high-fi-phone figcaption {
+    margin-top: 18px;
+}
+
+.high-fi-phone figcaption span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #17142f;
+
+    font-size: 0.75rem;
+}
+
+.high-fi-phone figcaption p {
+    margin: 0;
+
+    color: #817b98;
+
+    font-size: 0.8rem;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(1) {
+    transition-delay: 150ms;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(2) {
+    transition-delay: 250ms;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(3) {
+    transition-delay: 350ms;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(4) {
+    transition-delay: 450ms;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(5) {
+    transition-delay: 550ms;
+}
+
+.high-fidelity-section.is-visible .high-fi-phone:nth-child(6) {
+    transition-delay: 650ms;
+}
+
+.high-fi-phone {
+    transition:
+        opacity 350ms ease,
+        transform 350ms var(--ease-out-smooth);
+}
+
+.high-fi-phone>img {
+    transition:
+        transform 350ms var(--ease-out-smooth),
+        opacity 350ms ease,
+        filter 350ms ease;
+}

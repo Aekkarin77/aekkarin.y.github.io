@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STEAM digital game store project by Aekkarin Yimyaem.">
+    <title>STEAM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/projects/steam.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="../assets/js/site.js" defer></script>
+    <script src="../assets/js/steam.js" defer></script>
+    <script type="module" src="../assets/js/components/site-header.js"></script>
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="steam-page" id="top">
+        <section class="steam-hero">
+
+            <div class="fireflies" aria-hidden="true"></div>
+            <div class="project-back-navigation scroll-reveal">
+                <a class="expandable-back-link expandable-back-link--dark" href="../index.html#work"
+                    aria-label="Back to collection">
+                    <span class="expandable-back-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </span>
+
+                    <span class="expandable-back-link__label">
+                        Back to collection
+                    </span>
+                </a>
+            </div>
+            <div class="steam-hero__grid">
+
+                <div class="steam-hero__content">
+                    <div class="steam-hero__category scroll-reveal">
+                        <p>UI DESIGN · DATABASE DESIGN</p>
+                    </div>
+
+                    <h1 class="steam-hero__title scroll-reveal scroll-reveal--delay-100">
+                        STEAM
+                    </h1>
+
+                    <h2 class="steam-hero__subtitle scroll-reveal scroll-reveal--delay-200">
+                        Designing the experience<br>
+                        behind a <em>digital game store.</em>
+                    </h2>
+
+                    <p class="steam-hero__description scroll-reveal scroll-reveal--delay-300">
+                        A database lab project exploring how players,
+                        developers, and administrators interact across one
+                        platform.
+                    </p>
+                </div>
+                <div class="paymate-hero__visual scroll-reveal">
+                    <div data-scroll-animation data-animation-src="../assets/animations/hero-steam.json"></div>
+                </div>
+            </div>
+
+            <div class="steam-hero__scroll-indicator" aria-hidden="true">
+                <div class="steam-hero__scroll-animation" data-scroll-animation
+                    data-animation-src="../assets/animations/scroll-down.json"></div>
+            </div>
+
+        </section>
+        <dl class="steam-info steam-container scroll-reveal">
+            <div>
+                <dt>Role</dt>
+                <dd>UI & Database Designer</dd>
+            </div>
+            <div>
+                <dt>Course</dt>
+                <dd>Database Laboratory</dd>
+            </div>
+            <div>
+                <dt>Year</dt>
+                <dd>2024</dd>
+            </div>
+            <div>
+                <dt>Tools</dt>
+                <dd>Figma, MySQL, phpMyAdmin</dd>
+            </div>
+        </dl>
+        <div class="steam-content steam-container">
+            <section class="steam-overview scroll-reveal" id="overview">
+                <h2>Overview</h2>
+                <p class="section-description">
+                    STEAM is a database laboratory group project that models a digital game distribution platform for
+                    players, developers, and administrators. The project combines a proposed user interface with a
+                    relational database supporting game discovery, developer submissions, administrative approval,
+                    purchasing, ownership, and reviews. A simplified PHP prototype was developed collaboratively by the
+                    team to validate the core database workflows.
+                </p>
+            </section>
+            <!-------- Problem & Objectives ----------------------------------------------------------->
+            <section class="steam-problem-objectives" id="problem-objectives" data-section-reveal>
+                <p class="section-label">
+                    PROBLEM & OBJECTIVES
+                </p>
+
+                <div class="steam-problem-objectives__layout">
+                    <div>
+                        <h2 class="section-title steam-section-heading">
+                            The Problem
+                        </h2>
+
+                        <p class="steam-problem__description">
+                            A digital game marketplace must manage interconnected data
+                            across multiple user roles and workflows. Players purchase and
+                            review games, developers submit titles, and administrators
+                            evaluate submissions before publication. The challenge was to
+                            organize these relationships while keeping the user journey
+                            clear and the stored data consistent.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title steam-section-heading">
+                            Project Objectives
+                        </h2>
+
+                        <ol class="steam-objectives__list">
+                            <li class="steam-objective">
+                                <span class="steam-objective__number" aria-hidden="true">
+                                    <span>01</span>
+                                </span>
+
+                                <div class="steam-objective__content">
+                                    <h3>Design the user journey</h3>
+
+                                    <p class="section-description">
+                                        Define clear flows for discovering, purchasing,
+                                        publishing, and managing digital games.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="steam-objective">
+                                <span class="steam-objective__number" aria-hidden="true">
+                                    <span>02</span>
+                                </span>
+
+                                <div class="steam-objective__content">
+                                    <h3>Structure the data</h3>
+
+                                    <p class="section-description">
+                                        Translate platform requirements into normalized
+                                        entities, attributes, and relationships.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="steam-objective">
+                                <span class="steam-objective__number" aria-hidden="true">
+                                    <span>03</span>
+                                </span>
+
+                                <div class="steam-objective__content">
+                                    <h3>Validate core workflows</h3>
+
+                                    <p class="section-description">
+                                        Use a collaborative PHP prototype to confirm that
+                                        the database supports the intended operations.
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-------- Users & Requirements ----------------------------------------------------------->
+            <section class="steam-roles" id="users-requirements" data-section-reveal>
+                <p class="section-label">
+                    USERS & REQUIREMENTS
+                </p>
+
+                <header class="steam-roles__header">
+                    <h2 class="section-title steam-roles__title">
+                        <span class="steam-roles__title-line">
+                            <span>Three roles.</span>
+                        </span>
+
+                        <span class="steam-roles__title-line">
+                            <span>One connected platform.</span>
+                        </span>
+                    </h2>
+
+                    <p class="section-description steam-roles__introduction">
+                        Each user role interacts with different parts of the system
+                        while sharing the same relational data.
+                    </p>
+                </header>
+
+                <div class="steam-roles__grid">
+                    <!-- Player -->
+                    <article class="steam-role" style="--role-delay: 500ms">
+                        <div class="steam-role__number" aria-hidden="true">
+                            <span>01</span>
+                        </div>
+
+                        <div class="steam-role__body">
+                            <h3>Player</h3>
+
+                            <p class="section-description steam-role__description">
+                                Discovers, purchases, and manages digital games.
+                            </p>
+
+                            <ul class="steam-role__requirements">
+                                <li style="--requirement-delay: 760ms">
+                                    Create and access an account
+                                </li>
+
+                                <li style="--requirement-delay: 900ms">
+                                    Browse game information and offers
+                                </li>
+
+                                <li style="--requirement-delay: 1040ms">
+                                    Purchase and access owned games
+                                </li>
+
+                                <li style="--requirement-delay: 1180ms">
+                                    Write recommendations and reviews
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Developer -->
+                    <article class="steam-role" style="--role-delay: 1320ms">
+                        <div class="steam-role__number" aria-hidden="true">
+                            <span>02</span>
+                        </div>
+
+                        <div class="steam-role__body">
+                            <h3>Developer</h3>
+
+                            <p class="section-description steam-role__description">
+                                Publishes games through a structured submission process.
+                            </p>
+
+                            <ul class="steam-role__requirements">
+                                <li style="--requirement-delay: 1580ms">
+                                    Create a developer profile
+                                </li>
+
+                                <li style="--requirement-delay: 1720ms">
+                                    Submit game details and files
+                                </li>
+
+                                <li style="--requirement-delay: 1860ms">
+                                    Assign genres and age ratings
+                                </li>
+
+                                <li style="--requirement-delay: 2000ms">
+                                    Track submission status
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Administrator -->
+                    <article class="steam-role" style="--role-delay: 2140ms">
+                        <div class="steam-role__number" aria-hidden="true">
+                            <span>03</span>
+                        </div>
+
+                        <div class="steam-role__body">
+                            <h3>Administrator</h3>
+
+                            <p class="section-description steam-role__description">
+                                Reviews submissions before games enter the store.
+                            </p>
+
+                            <ul class="steam-role__requirements">
+                                <li style="--requirement-delay: 2400ms">
+                                    Access pending submissions
+                                </li>
+
+                                <li style="--requirement-delay: 2540ms">
+                                    Review game information
+                                </li>
+
+                                <li style="--requirement-delay: 2680ms">
+                                    Approve or reject submissions
+                                </li>
+
+                                <li style="--requirement-delay: 2820ms">
+                                    Publish approved games
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-------- User Flows ----------------------------------------------------------->
+            <section class="steam-flows" id="user-flows" data-section-reveal>
+                <p class="section-label">
+                    USER FLOWS
+                </p>
+
+                <header class="steam-flows__header">
+                    <h2 class="section-title steam-flows__title">
+                        Different journeys.<br>
+                        Shared data.
+                    </h2>
+
+                    <p class="section-description steam-flows__introduction">
+                        Each role follows an independent workflow while their actions
+                        remain connected through the relational database.
+                    </p>
+                </header>
+
+                <div class="steam-flows__list">
+                    <!-- Player -->
+                    <article class="steam-flow-row" style="--row-delay: 200ms">
+                        <div class="steam-flow-row__role">
+                            <span>01</span>
+                            <h3>Player</h3>
+                        </div>
+
+                        <div class="steam-flow-track">
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 160ms)">
+                                <span class="steam-flow-step__number">1</span>
+                                <p>Create Account</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 320ms);
+                        --sweep-delay: 0ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 480ms)">
+                                <span class="steam-flow-step__number">2</span>
+                                <p>Browse Store</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 640ms);
+                        --sweep-delay: 130ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 800ms)">
+                                <span class="steam-flow-step__number">3</span>
+                                <p>Add to Cart</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 960ms);
+                        --sweep-delay: 260ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 1120ms)">
+                                <span class="steam-flow-step__number">4</span>
+                                <p>Complete Payment</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 1280ms);
+                        --sweep-delay: 390ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step steam-flow-step--outcome"
+                                style="--item-delay: calc(var(--row-delay) + 1440ms)">
+                                <span class="steam-flow-step__number">5</span>
+                                <p>Access Library</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Developer -->
+                    <article class="steam-flow-row" style="--row-delay: 1900ms">
+                        <div class="steam-flow-row__role">
+                            <span>02</span>
+                            <h3>Developer</h3>
+                        </div>
+
+                        <div class="steam-flow-track">
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 160ms)">
+                                <span class="steam-flow-step__number">1</span>
+                                <p>Create Developer Profile</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 320ms);
+                        --sweep-delay: 0ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 480ms)">
+                                <span class="steam-flow-step__number">2</span>
+                                <p>Enter Game Details</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 640ms);
+                        --sweep-delay: 130ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 800ms)">
+                                <span class="steam-flow-step__number">3</span>
+                                <p>Upload Files</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 960ms);
+                        --sweep-delay: 260ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 1120ms)">
+                                <span class="steam-flow-step__number">4</span>
+                                <p>Submit for Review</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 1280ms);
+                        --sweep-delay: 390ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step steam-flow-step--outcome"
+                                style="--item-delay: calc(var(--row-delay) + 1440ms)">
+                                <span class="steam-flow-step__number">5</span>
+                                <p>Track Status</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Administrator -->
+                    <article class="steam-flow-row" style="--row-delay: 3600ms">
+                        <div class="steam-flow-row__role">
+                            <span>03</span>
+                            <h3>Administrator</h3>
+                        </div>
+
+                        <div class="steam-flow-track">
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 160ms)">
+                                <span class="steam-flow-step__number">1</span>
+                                <p>Sign In</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 320ms);
+                        --sweep-delay: 0ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 480ms)">
+                                <span class="steam-flow-step__number">2</span>
+                                <p>View Pending Submission</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 640ms);
+                        --sweep-delay: 130ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 800ms)">
+                                <span class="steam-flow-step__number">3</span>
+                                <p>Review Details</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 960ms);
+                        --sweep-delay: 260ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step" style="--item-delay: calc(var(--row-delay) + 1120ms)">
+                                <span class="steam-flow-step__number">4</span>
+                                <p>Approve or Reject</p>
+                            </div>
+
+                            <span class="steam-flow-connector" style="
+                        --item-delay: calc(var(--row-delay) + 1280ms);
+                        --sweep-delay: 390ms;
+                    " aria-hidden="true">
+                                <span></span>
+                            </span>
+
+                            <div class="steam-flow-step steam-flow-step--outcome"
+                                style="--item-delay: calc(var(--row-delay) + 1440ms)">
+                                <span class="steam-flow-step__number">5</span>
+                                <p>Publish Game</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-------- Proposed UI ----------------------------------------------------------->
+            <section class="steam-showcase" id="proposed-ui" data-section-reveal data-screen-showcase>
+
+                <p class="section-label">
+                    PROPOSED UI
+                </p>
+
+                <header class="steam-showcase__header">
+                    <h2 class="section-title">
+                        A closer look at the<br>
+                        proposed experience.
+                    </h2>
+
+                    <a class="steam-showcase__figma" href="https://www.figma.com/design/K0Vrwss25YAaPa2ef5UcXc/Steam?node-id=0-1&t=GiaF9Z0xH1MQN8ZS-1" target="_blank" rel="noopener">
+                        View Figma Prototype
+                        <span class="figma-button__arrow">
+                            <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+                </header>
+
+                <div class="steam-showcase__layout">
+                    <div class="steam-showcase__viewer">
+                        <!-- Screen index อยู่เหนือรูป -->
+                        <nav class="steam-screen-index" aria-label="Proposed interface screens" data-screen-index>
+                            <span class="steam-screen-index__indicator" data-screen-indicator aria-hidden="true"></span>
+
+                            <button class="steam-screen-index__button is-active" type="button" data-screen-button="0"
+                                aria-pressed="true" style="--index-delay: 200ms">
+                                <span>01</span>
+                                <strong>Store</strong>
+                            </button>
+
+                            <button class="steam-screen-index__button" type="button" data-screen-button="1"
+                                aria-pressed="false" style="--index-delay: 320ms">
+                                <span>02</span>
+                                <strong>Product</strong>
+                            </button>
+
+                            <button class="steam-screen-index__button" type="button" data-screen-button="2"
+                                aria-pressed="false" style="--index-delay: 440ms">
+                                <span>03</span>
+                                <strong>Community</strong>
+                            </button>
+
+                            <button class="steam-screen-index__button" type="button" data-screen-button="3"
+                                aria-pressed="false" style="--index-delay: 560ms">
+                                <span>04</span>
+                                <strong>Library</strong>
+                            </button>
+                        </nav>
+
+                        <!-- Screen preview -->
+                        <div class="steam-screen-preview" data-screen-preview>
+                            <img class="steam-screen-preview__image is-active" src="../assets/images/steam/store.png"
+                                alt="STEAM store and discovery screen" data-screen-image="0">
+
+                            <img class="steam-screen-preview__image" src="../assets/images/steam/product.png"
+                                alt="STEAM product detail screen" data-screen-image="1">
+
+                            <img class="steam-screen-preview__image" src="../assets/images/steam/community.png"
+                                alt="STEAM community screen" data-screen-image="2">
+
+                            <img class="steam-screen-preview__image" src="../assets/images/steam/library.png"
+                                alt="STEAM game library screen" data-screen-image="3">
+                        </div>
+                    </div>
+
+                    <!-- Screen information -->
+                    <aside class="steam-screen-details">
+                        <div class="steam-screen-details__content" data-screen-content>
+                            <p class="steam-screen-details__eyebrow">
+                                Current screen
+                            </p>
+
+                            <h3 data-screen-title>
+                                Store & Discovery
+                            </h3>
+
+                            <p class="section-description" data-screen-description>
+                                A storefront designed to help players scan featured
+                                releases, compare offers, and reach game details quickly.
+                            </p>
+
+                            <ul data-screen-features>
+                                <li>Featured discovery</li>
+                                <li>Offer visibility</li>
+                                <li>Clear navigation</li>
+                            </ul>
+                        </div>
+
+                        <!-- ตำแหน่งจะไม่เลื่อนตามความยาวของ content -->
+                        <div class="steam-screen-navigation">
+                            <button type="button" class="steam-screen-navigation__button--previous" data-screen-previous
+                                aria-label="Previous screen">
+                                <img src="../assets/icons/arrow.svg" alt="" aria-hidden="true">
+                            </button>
+
+                            <p>
+                                <strong data-screen-current>01</strong>
+                                <span>/ 04</span>
+                            </p>
+
+                            <button type="button" class="steam-screen-navigation__button--next" data-screen-next
+                                aria-label="Next screen">
+                                <img src="../assets/icons/arrow.svg" alt="" aria-hidden="true">
+                            </button>
+                        </div>
+
+                        <p class="steam-screen-details__caption">
+                            Proposed interface concept
+                        </p>
+                    </aside>
+                </div>
+
+            </section>
+
+            <!-------- Data Mapping ----------------------------------------------------------->
+            <section class="steam-mapping" id="ui-data-mapping" data-section-reveal data-mapping-section>
+                <p class="section-label">
+                    UI-DATA MAPPING
+                </p>
+
+                <header class="steam-mapping__header">
+                    <h2 class="section-title  steam-mapping__title">
+                        Connecting interface
+                        decisions to the data model.
+                    </h2>
+
+                    <p class="section-description steam-mapping__introduction">
+                        Select a user role to trace how each screen and action
+                        depends on the relational database.
+                    </p>
+                </header>
+
+                <!-- Role tabs -->
+                <div class="steam-tab-index" role="tablist" aria-label="Select user role" data-mapping-tabs>
+                    <span class="steam-tab-index__indicator" data-mapping-indicator aria-hidden="true"></span>
+
+                    <button class="steam-tab-index__button is-active" type="button" role="tab" data-mapping-tab="player"
+                        aria-selected="true">
+                        Player
+                    </button>
+
+                    <button class="steam-tab-index__button" type="button" role="tab" data-mapping-tab="developer"
+                        aria-selected="false">
+                        Developer
+                    </button>
+
+                    <button class="steam-tab-index__button" type="button" role="tab" data-mapping-tab="administrator"
+                        aria-selected="false">
+                        Administrator
+                    </button>
+                </div>
+
+                <!-- Mapping content -->
+                <div class="steam-mapping__panel" data-mapping-panel>
+                    <div class="steam-mapping__head">
+                        <span>Interface screen</span>
+                        <span>User action</span>
+                        <span>Database entities</span>
+                    </div>
+
+                    <div data-mapping-rows></div>
+
+                    <div class="steam-mapping__relationship">
+                        <strong>Data relationship</strong>
+                        <p data-mapping-relationship></p>
+                    </div>
+                </div>
+
+                <!-- Entity tooltip -->
+                <div class="steam-entity-tooltip" role="tooltip" data-entity-tooltip aria-hidden="true">
+                    <strong data-tooltip-title></strong>
+                    <p data-tooltip-description></p>
+                </div>
+            </section>
+
+            <!-------- Database Design ----------------------------------------------------------->
+            <section class="steam-database" id="database-design" data-section-reveal data-database-section>
+                <p class="section-label steam-database__label">
+                    DATABASE DESIGN
+                </p>
+
+                <header class="steam-database__header">
+                    <div>
+
+
+                        <h2 class="section-title steam-database__title">
+                            Database built<br>
+                            for real workflows.
+                        </h2>
+                    </div>
+
+                    <div class="steam-database__introduction">
+                        <p class="section-description">
+                            The schema organizes accounts, publishing, commerce,
+                            ownership, and community activity while preserving
+                            relationships across multiple user roles.
+                        </p>
+
+                        <div class="steam-database__metrics">
+                            <div class="steam-database__metric">
+                                <strong data-database-count="13">0</strong>
+                                <span>Tables</span>
+                            </div>
+
+                            <div class="steam-database__metric">
+                                <strong data-database-count="18">0</strong>
+                                <span>Relationships</span>
+                            </div>
+
+                            <div class="steam-database__metric">
+                                <strong data-database-count="4">0</strong>
+                                <span>Associative Tables</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="steam-database__filters steam-panel" aria-label="Filter database diagram">
+                    <div class="steam-database__filter-title">
+                        <span class="steam-database__filter-icon icon-box">
+                            <img src="../assets/icons/table.svg" alt="" aria-hidden="true">
+                        </span>
+                        <p>Parent Tables</p>
+                    </div>
+
+                    <div class="steam-database__filter-list">
+                        <button type="button" class="is-active" data-database-filter="all">
+                            Show all
+                        </button>
+
+                        <button type="button" data-database-filter="user">
+                            User
+                        </button>
+
+                        <button type="button" data-database-filter="developer">
+                            Developer
+                        </button>
+
+                        <button type="button" data-database-filter="admin">
+                            Admin
+                        </button>
+
+                        <button type="button" data-database-filter="gamesubmission">
+                            Submission
+                        </button>
+
+                        <button type="button" data-database-filter="genre_id_to_name">
+                            Genre
+                        </button>
+
+                        <button type="button" data-database-filter="game">
+                            Game
+                        </button>
+
+                        <button type="button" data-database-filter="cart">
+                            Cart
+                        </button>
+
+                        <button type="button" data-database-filter="paymentmethod">
+                            Payment
+                        </button>
+                    </div>
+                </div>
+
+                <div class="steam-database__diagram steam-panel">
+                    <div class="steam-database__diagram-header">
+                        <div class="steam-database__diagram-name">
+                            <span class="steam-database__diagram-icon icon-box">
+                                <img src="../assets/icons/database-1.svg" alt="" aria-hidden="true">
+                            </span>
+                            <p>Relational Schema</p>
+                        </div>
+
+                        <div class="steam-database__diagram-actions">
+                            <div class="steam-database__zoom">
+                                <button type="button" data-database-zoom-out aria-label="Zoom out">
+                                    −
+                                </button>
+
+                                <span data-database-zoom-value>100%</span>
+
+                                <button type="button" data-database-zoom-in aria-label="Zoom in">
+                                    +
+                                </button>
+                            </div>
+
+                            <button type="button" class="steam-database__reset steam-outline-button"
+                                data-database-reset>
+                                Reset
+                            </button>
+
+                            <button type="button" class="steam-database__open steam-outline-button" data-database-open>
+                                Open Full Diagram ↗
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="steam-database__stage" data-database-stage>
+                        <div class="steam-database__canvas" data-database-canvas
+                            data-database-source="../assets/images/steam/Er%20(1).svg">
+                            <p class="steam-database__loading">
+                                Loading diagram...
+                            </p>
+                        </div>
+
+                        <div class="steam-database__tooltip" data-database-tooltip role="tooltip">
+                            <strong data-database-tooltip-title></strong>
+                            <span data-database-tooltip-count></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight -->
+                <div class="insight">
+                    <strong>Schema Insights</strong>
+                    <p>The schema separates submitted and published games, extends user accounts through developer
+                        profiles, and resolves many-to-many relationships using associative tables.</p>
+                </div>
+
+
+
+
+            </section>
+
+            <!-------- Steam Prototype ----------------------------------------------------------->
+            <section class="steam-prototype" id="functional-prototype" data-section-reveal data-prototype-section>
+                <div class="function-container">
+
+                    <header class="steam-prototype__header">
+                        <div>
+                            <p class="section-label steam-prototype__label">
+                                FUNCTIONAL PROTOTYPE
+                            </p>
+
+                            <h2 class="section-title steam-prototype__title">
+                                From database model<br>
+                                to working flows.
+                            </h2>
+                        </div>
+
+                        <div class="steam-prototype__introduction">
+                            <p class="section-description">
+                                A simplified PHP prototype was developed
+                                collaboratively to validate the platform's
+                                core SQL workflows.
+                            </p>
+
+                            <p class="steam-prototype__metadata" data-prototype-metadata
+                                data-text="PHP · MySQL · TEAM PROTOTYPE" aria-label="PHP, MySQL, Team Prototype"></p>
+                        </div>
+                    </header>
+
+                    <div class="steam-prototype__showcase">
+
+                        <!-- Main screenshot -->
+                        <div class="steam-prototype__screen">
+                            <img src="../assets/images/steam/Dev-submit.png" alt="Submit game data screen"
+                                data-prototype-main-image>
+                        </div>
+
+                        <!-- Workflow -->
+                        <div class="steam-prototype__workflow">
+                            <div class="steam-prototype__workflow-track" aria-hidden="true">
+                                <span class="steam-prototype__workflow-line"></span>
+                                <span class="steam-prototype__workflow-progress" data-prototype-progress></span>
+                            </div>
+
+                            <button type="button" class="steam-prototype__step is-active" data-prototype-step
+                                data-index="0" data-image="../assets/images/steam/dev-submit.png"
+                                data-alt="Submit game data screen">
+                                <span class="steam-prototype__step-number">
+                                    01
+                                </span>
+
+                                <span class="steam-prototype__step-content">
+                                    <strong>Submit game data</strong>
+
+                                    <span>
+                                        Developers upload game details,
+                                        images, genre, and pricing.
+                                    </span>
+                                </span>
+                            </button>
+
+                            <button type="button" class="steam-prototype__step" data-prototype-step data-index="1"
+                                data-image="../assets/images/steam/admin-review.png"
+                                data-alt="Review and publish screen">
+                                <span class="steam-prototype__step-number">
+                                    02
+                                </span>
+
+                                <span class="steam-prototype__step-content">
+                                    <strong>Review and publish</strong>
+
+                                    <span>
+                                        Administrators review submissions
+                                        and approve or deny them.
+                                    </span>
+                                </span>
+                            </button>
+
+                            <button type="button" class="steam-prototype__step" data-prototype-step data-index="2"
+                                data-image="../assets/images/steam/player-cart.png"
+                                data-alt="Build purchase cart screen">
+                                <span class="steam-prototype__step-number">
+                                    03
+                                </span>
+
+                                <span class="steam-prototype__step-content">
+                                    <strong>Build purchase cart</strong>
+
+                                    <span>
+                                        Approved games are available for
+                                        customers to add to their cart.
+                                    </span>
+                                </span>
+                            </button>
+
+                            <button type="button" class="steam-prototype__step" data-prototype-step data-index="3"
+                                data-image="../assets/images/steam/player-transaction.png"
+                                data-alt="Record transaction screen">
+                                <span class="steam-prototype__step-number">
+                                    04
+                                </span>
+
+                                <span class="steam-prototype__step-content">
+                                    <strong>Record transaction</strong>
+
+                                    <span>
+                                        Purchases are processed and a
+                                        confirmation record is generated.
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Screen index -->
+                    <div class="steam-prototype__screens">
+                        <button type="button" class="steam-prototype__screen-card is-active" data-prototype-select="0">
+                            <span class="steam-prototype__thumbnail">
+                                <img src="../assets/images/steam/dev-submit.png" alt="">
+                            </span>
+
+                            <span class="steam-prototype__screen-name">
+                                <b>01</b>
+                                Submit game data
+                            </span>
+                        </button>
+
+                        <button type="button" class="steam-prototype__screen-card" data-prototype-select="1">
+                            <span class="steam-prototype__thumbnail">
+                                <img src="../assets/images/steam/admin-review.png" alt="">
+                            </span>
+
+                            <span class="steam-prototype__screen-name">
+                                <b>02</b>
+                                Review and publish
+                            </span>
+                        </button>
+
+                        <button type="button" class="steam-prototype__screen-card" data-prototype-select="2">
+                            <span class="steam-prototype__thumbnail">
+                                <img src="../assets/images/steam/player-cart.png" alt="">
+                            </span>
+
+                            <span class="steam-prototype__screen-name">
+                                <b>03</b>
+                                Build purchase cart
+                            </span>
+                        </button>
+
+                        <button type="button" class="steam-prototype__screen-card" data-prototype-select="3">
+                            <span class="steam-prototype__thumbnail">
+                                <img src="../assets/images/steam/player-transaction.png" alt="">
+                            </span>
+
+                            <span class="steam-prototype__screen-name">
+                                <b>04</b>
+                                Record transaction
+                            </span>
+                        </button>
+                    </div>
+
+                    <p class="steam-prototype__footnote">
+                        Built to validate database operations rather than
+                        final visual fidelity.
+                    </p>
+                </div>
+            </section>
+
+            <!-------- Steam Reflections ----------------------------------------------------------->
+            <section class="steam-reflections" id="challenges-reflections" data-section-reveal>
+
+
+                <header class="steam-reflections__header">
+                    <div>
+                        <p class="section-label steam-reflections__label">
+                            CHALLENGES & REFLECTIONS
+                        </p>
+
+                        <h2 class="section-title steam-reflections__title">
+                            What the constraints<br>
+                            taught us.
+                        </h2>
+                    </div>
+
+                    <p class="section-description steam-reflections__description">
+                        The project revealed where design ambition,
+                        technical scope, and team coordination needed
+                        to meet.
+                    </p>
+                </header>
+
+                <div class="steam-reflections__rows">
+
+                    <!-- Row 01 -->
+                    <article class="steam-reflections__row" style="--row-index: 0">
+                        <div class="steam-reflections__row-heading">
+                            <span>01</span>
+
+                            <h3>
+                                Design vs.<br>
+                                implementation
+                            </h3>
+                        </div>
+
+                        <div class="steam-reflections__journey">
+                            <span class="steam-reflections__line" aria-hidden="true"></span>
+
+                            <div class="steam-reflections__item steam-reflections__item--challenge">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Challenge
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    The proposed interface exceeded
+                                    the available implementation time.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--tradeoff">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Trade-off
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    We prioritized working database
+                                    flows over matching the
+                                    high-fidelity design.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--learning">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Learning
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    Define a smaller MVP before
+                                    expanding the visual scope.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Row 02 -->
+                    <article class="steam-reflections__row" style="--row-index: 1">
+                        <div class="steam-reflections__row-heading">
+                            <span>02</span>
+
+                            <h3>
+                                Relational<br>
+                                complexity
+                            </h3>
+                        </div>
+
+                        <div class="steam-reflections__journey">
+                            <span class="steam-reflections__line" aria-hidden="true"></span>
+
+                            <div class="steam-reflections__item steam-reflections__item--challenge">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Challenge
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    Multiple roles and many-to-many
+                                    relationships increased schema
+                                    complexity.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--tradeoff">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Trade-off
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    Associative tables separated
+                                    responsibilities and reduced
+                                    duplicated data.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--learning">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Learning
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    Map interface actions to database
+                                    operations earlier.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Row 03 -->
+                    <article class="steam-reflections__row" style="--row-index: 2">
+                        <div class="steam-reflections__row-heading">
+                            <span>03</span>
+
+                            <h3>
+                                Team<br>
+                                integration
+                            </h3>
+                        </div>
+
+                        <div class="steam-reflections__journey">
+                            <span class="steam-reflections__line" aria-hidden="true"></span>
+
+                            <div class="steam-reflections__item steam-reflections__item--challenge">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Challenge
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    UI, database, and PHP work
+                                    progressed in parallel under
+                                    a tight deadline.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--tradeoff">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Trade-off
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    The proposed UI and functional
+                                    prototype were documented as
+                                    separate outcomes.
+                                </p>
+                            </div>
+
+                            <div class="steam-reflections__item steam-reflections__item--learning">
+                                <span class="steam-reflections__point" aria-hidden="true"></span>
+
+                                <p class="steam-reflections__eyebrow">
+                                    Learning
+                                </p>
+
+                                <p class="steam-reflections__text">
+                                    Set ownership, naming conventions,
+                                    and integration checkpoints early.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="steam-reflections__closing">
+                    Constraints became inputs for better decisions.
+                </p>
+
+            </section>
+
+            <!-- Project Documents -->
+            <div>
+
+                <div class="project-documents__header">
+
+                    <h2>Project Documents</h2>
+
+                    <p>
+                        Supporting documents for this project.
+                    </p>
+
+                </div>
+
+
+                <div class="project-documents__grid">
+
+                    <a class="document-card" href="../assets/documents/Steam-Game-Distribution-Platform.pdf"
+                        target="_blank" rel="noopener">
+                        <div class="document-card__icon ">
+                            <img src="../assets/icons/pdf.svg" alt="" aria-hidden="true">
+                        </div>
+
+                        <div class="document-card__content">
+                            <strong>Slide Presentation</strong>
+                            <span>PDF · 22.7 MB</span>
+                        </div>
+
+                        <div class="document-card__action">
+                            <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                        </div>
+                    </a>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+</body>
+
+</html>

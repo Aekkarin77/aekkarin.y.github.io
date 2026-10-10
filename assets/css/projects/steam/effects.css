@@ -1,0 +1,125 @@
+/* ========================================
+   Firefly Background
+======================================== */
+
+.fireflies {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.firefly {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #fffeff;
+    box-shadow:
+        0 0 8px rgb(255 255 255 / 55%),
+        0 0 18px rgb(253 253 253 / 25%);
+    opacity: 0;
+    animation:
+        firefly-float var(--duration) ease-in-out infinite,
+        firefly-glow var(--glow-duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes firefly-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(var(--move-x-1),
+                var(--move-y-1));
+    }
+
+    50% {
+        transform: translate(var(--move-x-2),
+                var(--move-y-2));
+    }
+
+    75% {
+        transform: translate(var(--move-x-3),
+                var(--move-y-3));
+    }
+}
+
+@keyframes firefly-glow {
+
+    0%,
+    100% {
+        opacity: 0.08;
+    }
+
+    45% {
+        opacity: var(--max-opacity);
+    }
+
+    70% {
+        opacity: 0.18;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .firefly {
+        animation: none;
+        opacity: 0.15;
+    }
+}
+
+.steam-hero__grid {
+        grid-template-columns: .9fr 1.1fr;
+    }
+
+
+/* Shared UI primitives */
+
+.steam-panel {
+    border: 1px solid var(--steam-border);
+    border-radius: var(--steam-radius-medium);
+    background: var(--steam-panel);
+}
+
+.icon-box {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid var(--steam-border-light);
+    border-radius: var(--steam-radius-small);
+}
+
+.icon-box img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.steam-outline-button {
+    min-height: 40px;
+    padding-inline: 22px;
+    border: 1px solid var(--steam-border-strong);
+    border-radius: var(--steam-radius-small);
+    color: var(--steam-text);
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    transition:
+        color var(--steam-duration-fast) ease,
+        border-color var(--steam-duration-fast) ease,
+        background-color var(--steam-duration-fast) ease;
+}
+
+.steam-outline-button:hover {
+    border-color: var(--steam-green);
+    color: var(--steam-green);
+    background: var(--steam-green-05);
+}

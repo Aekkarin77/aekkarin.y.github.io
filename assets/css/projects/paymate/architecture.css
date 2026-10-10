@@ -1,0 +1,642 @@
+/* ========================================
+   System Architecture
+======================================== */
+
+.architecture-section {
+    position: relative;
+}
+
+.architecture-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 44px;
+}
+
+
+.architecture-header__title {
+    margin: 0;
+    color: #002f1c;
+    font-size: clamp(2.3rem, 4.4vw, 4.25rem);
+    font-weight: 750;
+    line-height: 1.03;
+    letter-spacing: -0.052em;
+}
+
+.architecture-header__line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+}
+
+.architecture-header__line>span {
+    display: block;
+}
+
+.architecture-header__accent {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.05em;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+}
+
+.architecture-header__accent::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.075em;
+    border-radius: 999px;
+    background: #65e6ad;
+    content: "";
+    transform: scaleX(0) rotate(-2deg);
+    transform-origin: left center;
+}
+
+.architecture-header__description {
+    margin: 0 0 12px;
+    color: #626a80;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.55;
+}
+
+/* Diagram */
+
+.architecture-diagram {
+    position: relative;
+    aspect-ratio: 2 / 1;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.architecture-diagram__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgb(0 117 65 / 6%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(0 117 65 / 6%) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom,
+            transparent,
+            #000 12%,
+            #000 88%,
+            transparent);
+}
+
+.architecture-diagram__rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(38vw, 460px);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+}
+
+.architecture-diagram__rings span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgb(48 210 144 / 22%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.architecture-diagram__rings span:nth-child(1) {
+    width: 100%;
+    height: 100%;
+}
+
+.architecture-diagram__rings span:nth-child(2) {
+    width: 75%;
+    height: 75%;
+}
+
+.architecture-diagram__rings span:nth-child(3) {
+    width: 48%;
+    height: 48%;
+}
+
+/* SVG connections */
+
+.architecture-connections {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.architecture-connection {
+    fill: none;
+    stroke: #07975d;
+    stroke-linecap: round;
+    stroke-width: 2;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition:
+        opacity 300ms ease,
+        stroke 300ms ease,
+        stroke-width 300ms ease;
+    vector-effect: non-scaling-stroke;
+}
+
+.architecture-pulse {
+    fill: #63e9ae;
+    opacity: 0;
+    filter: drop-shadow(0 0 6px #38d996);
+    transition: opacity 300ms ease;
+}
+
+/* Core */
+
+.architecture-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    display: flex;
+    width: 260px;
+    min-height: 138px;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 1px solid #35d797;
+    border-radius: 28px;
+    background: rgb(238 255 247 / 100%);
+    box-shadow: 0 24px 60px rgb(0 117 65 / 14%);
+    color: #003b23;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0.65);
+    opacity: 0;
+}
+
+.architecture-core__glow {
+    position: absolute;
+    inset: -18px;
+    z-index: -1;
+    border-radius: inherit;
+    background: rgb(77 229 165 / 20%);
+    opacity: 0;
+}
+
+.architecture-core__icon img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 9px;
+    object-fit: contain;
+}
+
+.architecture-core h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.architecture-core p {
+    margin: 0;
+    color: #346252;
+    font-size: 0.85rem;
+}
+
+/* Outer nodes */
+
+.architecture-node {
+    position: absolute;
+    z-index: 6;
+    width: 28%;
+    min-width: 250px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #003b23;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.architecture-node--receipt {
+    top: 25%;
+    left: 20%;
+    --origin-x: 108%;
+    --origin-y: 100%;
+}
+
+.architecture-node--bank {
+    top: 25%;
+    left: 80%;
+    --origin-x: -108%;
+    --origin-y: 100%;
+}
+
+.architecture-node--database {
+    top: 75%;
+    left: 20%;
+    --origin-x: 108%;
+    --origin-y: -100%;
+}
+
+.architecture-node--cloud {
+    top: 75%;
+    left: 80%;
+    --origin-x: -108%;
+    --origin-y: -100%;
+}
+
+.architecture-node__surface {
+    display: flex;
+    min-height: 106px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 26px;
+    border: 1px solid rgb(0 175 101 / 55%);
+    border-radius: 28px;
+    background: rgb(255 255 255 / 72%);
+    box-shadow: 0 16px 45px rgb(0 117 65 / 6%);
+    opacity: 0;
+    transform:
+        translate(var(--origin-x), var(--origin-y)) scale(0.75);
+    transition:
+        opacity 300ms ease,
+        transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 300ms ease,
+        box-shadow 300ms ease,
+        background-color 300ms ease;
+}
+
+.architecture-node__icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border: 1px solid #67e6af;
+    border-radius: 50%;
+    background: #edfff7;
+    place-items: center;
+}
+
+.architecture-node__icon img {
+    display: block;
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+}
+
+.architecture-node__content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.architecture-node__content strong {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.architecture-node__content small {
+    color: #50627a;
+    font-size: 0.8rem;
+}
+
+.architecture-node__extra {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    color: #40705f;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    opacity: 0;
+    transition:
+        max-height 350ms ease,
+        margin-top 350ms ease,
+        opacity 250ms ease;
+}
+
+/* Node hover */
+
+.architecture-node:hover,
+.architecture-node:focus-visible {
+    outline: none;
+}
+
+.architecture-node:hover .architecture-node__surface,
+.architecture-node:focus-visible .architecture-node__surface {
+    border-color: #29db94;
+    background: rgb(247 255 251 / 96%);
+    box-shadow: 0 22px 50px rgb(0 117 65 / 15%);
+    transform: translateY(-6px);
+}
+
+.architecture-node:hover .architecture-node__extra,
+.architecture-node:focus-visible .architecture-node__extra {
+    max-height: 55px;
+    margin-top: 8px;
+    opacity: 1;
+}
+
+/* Connection labels */
+
+.architecture-connection-label {
+    position: absolute;
+    z-index: 7;
+    padding: 7px 14px;
+    border: 1px solid rgb(0 175 101 / 35%);
+    border-radius: 999px;
+    background: rgb(240 255 248 / 92%);
+    color: #164c39;
+    font-size: 0.7rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 300ms ease,
+        transform 300ms ease,
+        border-color 300ms ease;
+    pointer-events: none;
+}
+
+.architecture-connection-label--receipt {
+    top: 30%;
+    left: 36%;
+}
+
+.architecture-connection-label--bank {
+    top: 30%;
+    right: 36%;
+}
+
+.architecture-connection-label--database {
+    bottom: 29%;
+    left: 36%;
+}
+
+.architecture-connection-label--cloud {
+    right: 36%;
+    bottom: 29%;
+}
+
+/* Hover focus states */
+
+.architecture-diagram.has-node-focus .architecture-node:not(.is-focused) {
+    opacity: 0.48;
+}
+
+.architecture-diagram.has-node-focus .architecture-connection:not(.is-focused),
+.architecture-diagram.has-node-focus .architecture-pulse:not(.is-focused),
+.architecture-diagram.has-node-focus .architecture-connection-label:not(.is-focused) {
+    opacity: 0.15;
+}
+
+.architecture-diagram.has-node-focus .architecture-connection.is-focused {
+    stroke: #20d98f;
+    stroke-width: 4;
+    opacity: 1;
+}
+
+.architecture-diagram.has-node-focus .architecture-pulse.is-focused {
+    opacity: 1;
+}
+
+.architecture-diagram.has-node-focus .architecture-connection-label.is-focused {
+    border-color: #29db94;
+    opacity: 1;
+}
+
+/* Reveal sequence */
+
+.js .architecture-header__label,
+.js .architecture-header__description {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.js .architecture-header__line>span {
+    transform: translateY(115%);
+}
+
+.architecture-section.is-visible .architecture-header__label,
+.architecture-section.is-visible .architecture-header__description {
+    animation: architecture-fade-up 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.architecture-section.is-visible .architecture-header__description {
+    animation-delay: 180ms;
+}
+
+.architecture-section.is-visible .architecture-header__line>span {
+    animation: architecture-line-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.architecture-section.is-visible .architecture-header__line:nth-child(2)>span {
+    animation-delay: 120ms;
+}
+
+.architecture-section.is-visible .architecture-header__accent::after {
+    animation: architecture-underline 650ms cubic-bezier(0.22, 1, 0.36, 1) 620ms both;
+}
+
+/* Core*/
+
+.architecture-section.is-visible .architecture-core {
+    animation: architecture-core-in 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both;
+}
+
+.architecture-section.is-visible .architecture-core__glow {
+    animation:
+        architecture-glow-in 500ms ease 900ms both,
+        architecture-breathe 3.5s ease-in-out 1.4s infinite;
+}
+
+/* Lines:*/
+
+.architecture-section.is-visible .architecture-connection {
+    animation: architecture-draw-line 900ms cubic-bezier(0.65, 0, 0.35, 1) 1250ms forwards;
+}
+
+/* Nodes*/
+
+.architecture-section.is-visible .architecture-node__surface {
+    animation: architecture-node-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.architecture-section.is-visible .architecture-node--receipt .architecture-node__surface {
+    animation-delay: 1750ms;
+}
+
+.architecture-section.is-visible .architecture-node--bank .architecture-node__surface {
+    animation-delay: 1870ms;
+}
+
+.architecture-section.is-visible .architecture-node--database .architecture-node__surface {
+    animation-delay: 1990ms;
+}
+
+.architecture-section.is-visible .architecture-node--cloud .architecture-node__surface {
+    animation-delay: 2110ms;
+}
+
+/* Labels และ pulses */
+
+.architecture-section.is-visible .architecture-connection-label {
+    animation: architecture-label-in 450ms ease both;
+}
+
+.architecture-section.is-visible .architecture-connection-label--receipt {
+    animation-delay: 2300ms;
+}
+
+.architecture-section.is-visible .architecture-connection-label--bank {
+    animation-delay: 2400ms;
+}
+
+.architecture-section.is-visible .architecture-connection-label--database {
+    animation-delay: 2500ms;
+}
+
+.architecture-section.is-visible .architecture-connection-label--cloud {
+    animation-delay: 2600ms;
+}
+
+.architecture-section.is-visible .architecture-pulse {
+    animation: architecture-pulse-visible 300ms ease 2650ms forwards;
+}
+
+@keyframes architecture-fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes architecture-line-up {
+    from {
+        transform: translateY(115%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes architecture-underline {
+    from {
+        transform: scaleX(0) rotate(-2deg);
+    }
+
+    to {
+        transform: scaleX(1) rotate(-2deg);
+    }
+}
+
+@keyframes architecture-core-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes architecture-glow-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes architecture-breathe {
+
+    0%,
+    100% {
+        opacity: 0.22;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.52;
+        transform: scale(1.12);
+    }
+}
+
+@keyframes architecture-draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes architecture-node-in {
+    from {
+        opacity: 0;
+        transform:
+            translate(var(--origin-x), var(--origin-y)) scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes architecture-label-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes architecture-pulse-visible {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .architecture-section *,
+    .architecture-section *::before,
+    .architecture-section *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .js .architecture-header__label,
+    .js .architecture-header__description {
+        opacity: 1;
+        transform: none;
+    }
+
+    .js .architecture-header__line>span {
+        transform: none;
+    }
+
+    .architecture-header__accent::after {
+        transform: scaleX(1) rotate(-2deg);
+    }
+
+    .architecture-core,
+    .architecture-node__surface,
+    .architecture-connection-label,
+    .architecture-pulse {
+        opacity: 1;
+    }
+
+    .architecture-connection {
+        stroke-dashoffset: 0;
+    }
+
+    .architecture-pulse {
+        display: none;
+    }
+}

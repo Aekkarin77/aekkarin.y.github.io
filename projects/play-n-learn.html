@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play N' Learn UX/UI case study by Aekkarin Yimyaem.">
+    <title>Play N' Learn</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/projects/play-n-learn.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="../assets/js/site.js" defer></script>
+    <script src="../assets/js/play-n-learn.js" defer></script>
+    <script type="module" src="../assets/js/components/site-header.js"></script>
+</head>
+
+<body>
+    <site-header></site-header>
+    <main class="play-page">
+        <div aria-hidden="true" class="glow glow--top-left"></div>
+        <div aria-hidden="true" class="glow glow--right"></div>
+        <section class="case-study-hero">
+            <div class="fireflies" aria-hidden="true"></div>
+
+
+            <div class="project-back-navigation scroll-reveal">
+                <a class="expandable-back-link expandable-back-link--play" href="../index.html#work"
+                    aria-label="Back to collection">
+                    <span class="expandable-back-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </span>
+                    <span class="expandable-back-link__label">Back to collection</span>
+                </a>
+            </div>
+            <div class="case-study-hero__grid">
+                <div class="case-study-hero__content">
+                    <p class="case-study-hero__category scroll-reveal">EDUCATION · UX
+                        RESEARCH & DESIGN</p>
+                    <h1 class="case-study-hero__title scroll-reveal scroll-reveal--delay-100">Play N'
+                        Learn<span>.</span></h1>
+                    <h2 class="case-study-hero__subtitle scroll-reveal scroll-reveal--delay-200">Making
+                        learning<br />feel like <em>play.</em>
+                    </h2>
+                    <p class="case-study-hero__description scroll-reveal scroll-reveal--delay-300">A gamified learning
+                        experience connecting the
+                        way teachers teach with the way students learn.</p>
+                </div>
+
+                <div class="play-n-learn-hero__visual scroll-reveal">
+                    <div data-scroll-animation
+                        data-animation-src="../assets/animations/hero-play-n-learn.json"></div>
+                </div>
+
+            </div>
+            <div class="case-study-hero__scroll-indicator" aria-hidden="true">
+                <div class="case-study-hero__scroll-animation" data-scroll-animation
+                    data-animation-src="../assets/animations/scroll-down.json"></div>
+            </div>
+        </section>
+        <dl class="case-study-info case-study-container scroll-reveal">
+            <div>
+                <dt>Role</dt>
+                <dd>UX/UI Designer</dd>
+            </div>
+            <div>
+                <dt>Course</dt>
+                <dd>Human Computer Interface Design</dd>
+            </div>
+            <div>
+                <dt>Year</dt>
+                <dd>2024</dd>
+            </div>
+            <div>
+                <dt>Tools</dt>
+                <dd>Figma, FigJam</dd>
+            </div>
+        </dl>
+        <div class="case-study-content case-study-container">
+            <!--------  Overview --------------------------------------------------------------------------------->
+            <section class="case-study-section scroll-reveal">
+                <h2>Overview</h2>
+                <p class="sub-text">
+                    Play N' Learn is a gamified learning application prototype inspired by progression-based learning
+                    experiences such as Duolingo.
+                    The project explores how game mechanics, structured learning paths, and interactive activities can
+                    make digital learning more engaging and motivating.
+                    Designed for two distinct user groups, <em>Students and Educators</em>, the platform provides
+                    dedicated experiences for each. Educators can create classrooms,
+                    organize learning content, build quizzes and activities, and monitor student progress, while
+                    students can follow structured learning paths, complete activities,
+                    and receive instant feedback throughout their learning experience.
+                </p>
+            </section>
+            <!--------  Project Timeline ------------------------------------------------------------------------->
+            <section class="case-study-section  scroll-reveal" id="process-timeline">
+                <h2>Project Timeline</h2>
+                <div class="timeline__track">
+                    <div class="timeline__line timeline__line--desktop"><span id="timeline-progress-desktop"></span>
+                    </div>
+                    <div class="timeline__line timeline__line--mobile"><span id="timeline-progress-mobile"></span></div>
+                    <div class="timeline__nodes">
+                        <article class="timeline__node">
+                            <span class="timeline__badge">01</span>
+                            <h3>Discover & Define</h3>
+                            <p class="timeline__date">Feb 21 - Mar 12</p>
+                            <p class="timeline__method">Research · Survey</p>
+                            <div class="timeline__tooltip">Understand users, identify learning problems, and establish
+                                product requirements.</div>
+                        </article>
+                        <article class="timeline__node">
+                            <span class="timeline__badge">02</span>
+                            <h3>Low-Fidelity Design</h3>
+                            <p class="timeline__date">Mar 13 - Mar 27</p>
+                            <p class="timeline__method">User Journey · Flow</p>
+                            <div class="timeline__tooltip">Translate requirements into teacher and student journeys and
+                                explore core task flows.</div>
+                        </article>
+                        <article class="timeline__node">
+                            <span class="timeline__badge">03</span>
+                            <h3>Validate</h3>
+                            <p class="timeline__date">Mar 28 - Apr 10</p>
+                            <p class="timeline__method">Think-Aloud Testing</p>
+                            <div class="timeline__tooltip">Evaluate prototype through Think-Aloud usability testing and
+                                identify friction points.</div>
+                        </article>
+                        <article class="timeline__node">
+                            <span class="timeline__badge">04</span>
+                            <h3>High-Fidelity & Refine</h3>
+                            <p class="timeline__date">Apr 11 - May 4</p>
+                            <p class="timeline__method">Feedback · Figma</p>
+                            <div class="timeline__tooltip">Turn user feedback into design improvements and develop final
+                                high-fidelity interactive prototype.</div>
+                        </article>
+                        <article class="timeline__node">
+                            <span class="timeline__badge">05</span>
+                            <h3>Deliver</h3>
+                            <p class="timeline__date">May 5</p>
+                            <p class="timeline__method">Final Presentation</p>
+                            <div class="timeline__tooltip">Present final design artifacts and user research decisions.
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <!--------  The Challenge ---------------------------------------------------------------------------->
+            <section class="case-study-section challenge-section scroll-reveal" id="challenge">
+                <div class="case-study-section">
+                    <h2>
+                        The Challenge
+                    </h2>
+
+                    <p class="sub-text">
+                        <span class="sub-text__lead">How</span> might we make learning more
+                        engaging for students while giving
+                        educators clearer insight into progress?
+                    </p>
+
+                    <div class="challenge-audience">
+                        <span class="challenge-audience__pill">
+                            Engage Students
+                        </span>
+
+                        <span class="challenge-audience__pill">
+                            Support Educators
+                        </span>
+                    </div>
+
+                    <span class="challenge-section__accent" aria-hidden="true"></span>
+
+                    <p class="challenge-section__note">
+                        Real people. Real challenges. A brighter learning future.
+                    </p>
+                </div>
+
+                <div class="challenge-cards">
+                    <!-- Card 01 -->
+                    <article class="challenge-card challenge-card--motivation">
+                        <div class="challenge-card__surface">
+                            <div class="challenge-card__icon">
+                                👤
+                            </div>
+
+                            <h3>Low student motivation</h3>
+
+                            <p>
+                                Many students lose interest over time,
+                                especially without immediate rewards
+                                or a sense of progress.
+                            </p>
+
+                            <span class="challenge-card__tag">
+                                Engagement
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Card 02 -->
+                    <article class="challenge-card challenge-card--learning">
+                        <div class="challenge-card__surface">
+                            <div class="challenge-card__icon">
+                                📖
+                            </div>
+
+                            <h3>Passive learning</h3>
+
+                            <p>
+                                Traditional digital learning often feels
+                                one-dimensional, with limited interactivity
+                                or real-world connection.
+                            </p>
+
+                            <span class="challenge-card__tag">
+                                Experience
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Card 03 -->
+                    <article class="challenge-card challenge-card--insights">
+                        <div class="challenge-card__surface">
+                            <div class="challenge-card__icon">
+                                📊
+                            </div>
+
+                            <h3>Lack of actionable progress insights</h3>
+
+                            <p>
+                                Educators often lack clear, real-time insights
+                                into student progress, making it difficult
+                                to provide timely support.
+                            </p>
+
+                            <span class="challenge-card__tag">
+                                Visibility
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!--------  Research & Survey ------------------------------------------------------------------------>
+            <section class="case-study-section research-section scroll-reveal">
+                <h2>Research & Survey</h2>
+
+                <p class="sub-text">
+                    We used surveys, relevant studies, and similar-product analysis to understand
+                    learning behaviors, identify opportunities for a more engaging learning experience.
+                </p>
+
+                <div class="research-overview">
+
+                    <!-- Participants -->
+                    <div class="research-participants">
+                        <div class="research-participants__icon" aria-hidden="true">
+                            <img src="../assets/icons/participants.svg" alt="">
+                        </div>
+
+                        <strong class="research-participants__number" data-count="34">
+                            0
+                        </strong>
+
+                        <h3 class="research-participants__title">
+                            Survey Responses
+                        </h3>
+
+                        <p class="research-participants__description">
+                            Learning preferences<br>
+                            & teaching methods.
+                        </p>
+                    </div>
+
+
+                    <!-- Donut -->
+                    <div class="research-preference">
+
+                        <h3 class="research-preference__title">
+                            Preferred Teaching Method
+                        </h3>
+
+                        <div class="research-preference__content">
+
+                            <div class="research-donut">
+                                <div class="research-donut__center">
+                                    <strong class="research-donut__number" data-count="67.6">
+                                        0%
+                                    </strong>
+
+                                    <span>prefer Active</span>
+                                </div>
+                            </div>
+
+                            <div class="research-legend">
+
+                                <div class="research-legend__item">
+                                    <span class="research-legend__dot research-legend__dot--active"></span>
+
+                                    <span>Active</span>
+                                    <strong>67.7%</strong>
+                                </div>
+
+                                <div class="research-legend__item">
+                                    <span class="research-legend__dot research-legend__dot--passive"></span>
+
+                                    <span>Passive</span>
+                                    <strong>23.5%</strong>
+                                </div>
+
+                                <div class="research-legend__item">
+                                    <span class="research-legend__dot research-legend__dot--other"></span>
+
+                                    <span>Other</span>
+                                    <strong>5.9%</strong>
+                                </div>
+
+                                <div class="research-legend__item">
+                                    <span class="research-legend__dot research-legend__dot--blended"></span>
+
+                                    <span>Blended</span>
+                                    <strong>2.9%</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p class="research-preference__note">
+                            * Based on 34 survey responses.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Research Methods -->
+                    <div class="research-methods">
+                        <h3 class="research-methods__title">
+                            Our Research Methods
+                        </h3>
+
+                        <div class="research-method">
+                            <div class="research-method__icon research-method__icon--survey">
+                                <img src="../assets/icons/survey.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="research-method__content">
+                                <h4>Survey</h4>
+                                <p>Primary data from learners.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-method">
+                            <div class="research-method__icon research-method__icon--studies">
+                                <img src="../assets/icons/relevant-studies.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="research-method__content">
+                                <h4>Relevant Studies</h4>
+                                <p>Insights from academic research.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-method">
+                            <div class="research-method__icon research-method__icon--analysis">
+                                <img src="../assets/icons/product-analysis.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="research-method__content">
+                                <h4>Similar Product Analysis</h4>
+                                <p>Reviewed existing learning apps.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Insight -->
+                <div class="research-insight">
+                    <div class="research-insight__icon">
+                        <img src="../assets/icons/bulb.svg" alt="" aria-hidden="true">
+                    </div>
+
+                    <p>
+                        <strong class="research-insight__highlight">
+                            67.7%
+                        </strong>
+
+                        of participants preferred
+
+                        <strong class="research-insight__highlight">
+                            active learning
+                        </strong>,
+
+                        suggesting that students respond better to more
+                        interactive and participatory learning experiences.
+                    </p>
+                </div>
+            </section>
+
+            <!-------- Low-Fidelity Design ----------------------------------------------------------------------->
+            <section class="case-study-section low-fidelity-section scroll-reveal">
+                <h2>Low-Fidelity Design</h2>
+
+                <p class="sub-text">
+                    Early wireframes helped define the core student and educator flows before
+                    moving into visual refinement.
+                </p>
+
+
+                <div class="low-fi-layout">
+
+                    <!-- Left: Step List -->
+                    <div class="low-fi-content">
+
+
+                        <button class="low-fi-step is-active" type="button" data-low-fi-index="0">
+                            <span class="low-fi-step__number">01</span>
+
+                            <span class="low-fi-step__content">
+                                <strong>Loading Screen</strong>
+
+                                <span class="low-fi-step__description">
+                                    A simple entry point to introduce the app.
+                                </span>
+                            </span>
+                        </button>
+
+
+                        <button class="low-fi-step" type="button" data-low-fi-index="1">
+                            <span class="low-fi-step__number">02</span>
+
+                            <span class="low-fi-step__content">
+                                <strong>Choice of End</strong>
+
+                                <span class="low-fi-step__description">
+                                    Choose the learning journey.
+                                </span>
+                            </span>
+                        </button>
+
+
+                        <button class="low-fi-step" type="button" data-low-fi-index="2">
+                            <span class="low-fi-step__number">03</span>
+
+                            <span class="low-fi-step__content">
+                                <strong>Authentication</strong>
+
+                                <span class="low-fi-step__description">
+                                    Provides a simple entry point for account access.
+                                </span>
+                            </span>
+                        </button>
+
+
+                        <button class="low-fi-step" type="button" data-low-fi-index="3">
+                            <span class="low-fi-step__number">04</span>
+
+                            <span class="low-fi-step__content">
+                                <strong>Teacher Dashboard</strong>
+
+                                <span class="low-fi-step__description">
+                                    Gives educators quick access to core classroom tools.
+                                </span>
+                            </span>
+                        </button>
+
+
+                        <button class="low-fi-step" type="button" data-low-fi-index="4">
+                            <span class="low-fi-step__number">05</span>
+
+                            <span class="low-fi-step__content">
+                                <strong>Existing Classroom</strong>
+
+                                <span class="low-fi-step__description">
+                                    Shows class content, activities, and student progress.
+                                </span>
+                            </span>
+                        </button>
+
+
+                        <div class="low-fi-flow-link">
+                            <a class="low-fi-flow-link__button"
+                                href="https://excalidraw.com/#json=SLeJrKVnGjOfs5joNLSax,QnpqwxTUICfIAZmDsJtcjQ"
+                                target="_blank" rel="noopener noreferrer">
+                                <span>View Full Flow</span>
+
+                                <img src="../assets/icons/arrow.svg" alt="" aria-hidden="true">
+                            </a>
+
+                            <p class="low-fi-flow-link__description">
+                                Explore the complete wireframe flow.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Right: Wireframe Viewer -->
+                    <div class="low-fi-viewer">
+
+                        <button class="low-fi-viewer__arrow low-fi-viewer__arrow--previous" type="button"
+                            aria-label="Previous screen">
+                            <img src="../assets/icons/arrow.svg" alt="" aria-hidden="true">
+                        </button>
+
+
+                        <div class="low-fi-viewer__main">
+
+                            <div class="low-fi-viewer__screen">
+                                <img class="low-fi-viewer__image"
+                                    src="../assets/images/play-n-learn/low-fi/loading-screen.png"
+                                    alt="Loading Screen wireframe">
+                            </div>
+
+
+                            <div class="low-fi-pagination" aria-label="Wireframe pages">
+
+                                <button class="low-fi-pagination__dot is-active" type="button" data-low-fi-index="0"
+                                    aria-label="Loading Screen"></button>
+
+                                <button class="low-fi-pagination__dot" type="button" data-low-fi-index="1"
+                                    aria-label="Choice of End"></button>
+
+                                <button class="low-fi-pagination__dot" type="button" data-low-fi-index="2"
+                                    aria-label="Teacher Dashboard"></button>
+
+                                <button class="low-fi-pagination__dot" type="button" data-low-fi-index="3"
+                                    aria-label="Student Dashboard"></button>
+
+                                <button class="low-fi-pagination__dot" type="button" data-low-fi-index="4"
+                                    aria-label="Quiz Flow"></button>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="low-fi-viewer__arrow low-fi-viewer__arrow--next" type="button"
+                            aria-label="Next screen">
+                            <img src="../assets/icons/arrow.svg" alt="" aria-hidden="true">
+                        </button>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-------- Testing & Learnings----------------------------------------------------------------------->
+            <section class="case-study-section usability-section scroll-reveal">
+
+                <div class="usability-layout">
+
+                    <!-- Column 1: Overview -->
+                    <div class="case-study-section scroll-reveal">
+
+                        <h2>Testing & Learnings</h2>
+
+
+                        <p class="sub-text">
+                            We conducted think-aloud usability testing to identify usability issues and uncover
+                            opportunities for refinement.
+                        </p>
+
+
+                        <div class="usability-stats">
+
+                            <div class="usability-stat">
+                                <div class="usability-stat__icon">
+                                    <img src="../assets/icons/participants.svg" alt="">
+                                </div>
+
+                                <strong>4</strong>
+                                <span>Participants</span>
+
+                                <p>3 Students, 1 Educator</p>
+                            </div>
+
+
+                            <div class="usability-stat">
+                                <div class="usability-stat__icon">
+                                    <img src="../assets/icons/think-aloud.svg" alt="">
+                                </div>
+
+                                <strong>
+                                    Think-Aloud
+                                </strong>
+
+                                <span>Testing</span>
+
+                                <p>Moderated sessions</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Column 2: Image -->
+                    <div class="usability-media">
+
+                        <div class="usability-media__image">
+                            <img src="../assets/images/play-n-learn/testing.png" alt="Usability testing session">
+
+                        </div>
+
+
+                        <blockquote class="usability-quote">
+                            <span class="usability-quote__mark" aria-hidden="true">
+                                “
+                            </span>
+
+                            <p>
+                                It was easy to follow, but some
+                                parts were unclear at first.
+                            </p>
+
+                            <cite>
+                                Teacher participant
+                            </cite>
+                        </blockquote>
+
+                    </div>
+
+
+                    <!-- Column 3: Findings -->
+                    <div class="findings-title">
+
+                        <h3>Key Findings</h3>
+
+                        <article class="usability-finding ">
+
+                            <div class="usability-finding__icon usability-finding__icon--red">
+                                <img src="../assets/icons/cursor.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="usability-finding__content">
+                                <h4>
+                                    Mobile UI felt cluttered
+                                </h4>
+
+                                <p>
+                                    Several participants found the mobile interface overwhelming on smaller screens.
+                                </p>
+                            </div>
+                        </article>
+
+
+                        <article class="usability-finding">
+
+                            <div class="usability-finding__icon usability-finding__icon--orange">
+                                <img src="../assets/icons/graph-bar.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="usability-finding__content">
+                                <h4>
+                                    Analytics lacked useful detail
+                                </h4>
+
+                                <p>
+                                    Educators wanted more actionable insights,
+                                    such as student progress trends over time.
+                                </p>
+                            </div>
+                        </article>
+
+
+                        <article class="usability-finding">
+
+                            <div class="usability-finding__icon usability-finding__icon--green">
+                                <img src="../assets/icons/help.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="usability-finding__content">
+                                <h4>
+                                    Some interactions were unclear
+                                </h4>
+
+                                <p>
+                                    A few participants hesitated on key actions,
+                                    such as joining a class or submitting work.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-------- High-Fidelity Design----------------------------------------------------------------------->
+            <section class="case-study-section high-fidelity-section scroll-reveal">
+
+                <div class="high-fi-header">
+
+                    <!-- Left -->
+                    <div class=" case-study-section scroll-reveal">
+                        <h2>High-Fidelity Design</h2>
+
+                        <p class="sub-text">
+                            Based on insights from usability testing, I refined the design
+                            into a clean, intuitive, and consistent high-fidelity prototype.
+                        </p>
+
+                        <div class="high-fi-features">
+
+                            <div class="high-fi-feature">
+                                <div class="high-fi-feature__icon">
+                                    <img src="../assets/icons/mobile.svg" alt="" aria-hidden="true">
+                                </div>
+
+                                <div>
+                                    <strong>Mobile App Only</strong>
+                                    <span>iOS design (light mode)</span>
+                                </div>
+                            </div>
+
+
+                            <div class="high-fi-feature">
+                                <div class="high-fi-feature__icon">
+                                    <img src="../assets/icons/design-system.svg" alt="" aria-hidden="true">
+                                </div>
+
+                                <div>
+                                    <strong>Design System</strong>
+                                    <span>Consistent components</span>
+                                </div>
+                            </div>
+
+
+                            <div class="high-fi-feature">
+                                <div class="high-fi-feature__icon">
+                                    <img src="../assets/icons/refined.svg" alt="" aria-hidden="true">
+                                </div>
+
+                                <div>
+                                    <strong>Refined by Feedback</strong>
+                                    <span>Based on usability testing</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Figma CTA -->
+                    <a class="high-fi-cta"
+                        href="https://www.figma.com/design/a05N1a0Sob7h5BozD4PsuZ/PlayN-Learn?node-id=0-1&t=3MM8ZgX9yaUMqm2e-1"
+                        target="_blank" rel="noopener noreferrer">
+                        <div>
+                            <img class="high-fi-cta__icon" src="../assets/icons/figma.svg" alt="" aria-hidden="true">
+                        </div>
+
+                        <div class="high-fi-cta__content">
+                            <strong>View Full Prototype</strong>
+                            <span>
+                                Open in Figma to explore all screens
+                                and interactions.
+                            </span>
+                        </div>
+
+                        <span class="high-fi-cta__arrow">
+                            <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <!-- Phone Showcase -->
+                <div class="high-fi-showcase">
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/login.png" alt="Login screen">
+
+                        <figcaption>
+                            <span>01</span>
+                            <p>Login</p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/home.png" alt="Home screen">
+
+                        <figcaption>
+                            <span>02</span>
+                            <p>Home</p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/Message.png" alt="Messages screen">
+
+                        <figcaption>
+                            <span>03</span>
+                            <p>Messages</p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/profile.png" alt="Profile screen">
+
+                        <figcaption>
+                            <span>04</span>
+                            <p>Profile</p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/classroom.png" alt="Classroom screen">
+
+                        <figcaption>
+                            <span>05</span>
+                            <p>Classroom</p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="high-fi-phone">
+                        <img src="../assets/images/play-n-learn/high-fi/live-quiz.png" alt="Live Quiz screen">
+
+                        <figcaption>
+                            <span>06</span>
+                            <p>Live Quiz</p>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </section>
+            <!-------- challenge-learning----------------------------------------------------------------------->
+            <section class="case-study-section challenge-learning-section scroll-reveal">
+
+                <!-- Header -->
+                <div class="case-study-section">
+                    <h2>
+                        Challenge and Learning
+                    </h2>
+
+                    <p class="sub-text">
+                        Key challenges I faced during the project, how I overcame them,
+                        and what I learned for future improvement.
+                    </p>
+                </div>
+
+
+                <!-- Challenge + Learning -->
+                <div class="challenge-learning__grid">
+
+                    <!-- Challenge -->
+                    <article class="reflection-card reflection-card--challenge">
+
+                        <div class="reflection-card__header">
+                            <div class="reflection-card__icon reflection-card__icon--challenge">
+                                <img src="../assets/icons/puzzle.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div>
+                                <h3>Challenge</h3>
+
+                                <p>
+                                    Balancing the needs of both teachers and students
+                                    while keeping the interface simple and easy to use.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="reflection-card__list">
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">01</span>
+
+                                <div>
+                                    <h4>Different user needs</h4>
+                                    <p>
+                                        Teachers need efficient control,
+                                        while students need simplicity.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">02</span>
+
+                                <div>
+                                    <h4>Complex features</h4>
+                                    <p>
+                                        Managing materials, quizzes, and scores
+                                        without overwhelming users.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">03</span>
+
+                                <div>
+                                    <h4>Limited time for testing</h4>
+                                    <p>
+                                        Had to iterate quickly with limited user feedback.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Learning -->
+                    <article class="reflection-card reflection-card--learning">
+
+                        <div class="reflection-card__header">
+                            <div class="reflection-card__icon reflection-card__icon--learning">
+                                <img src="../assets/icons/bulb.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div>
+                                <h3>Learning</h3>
+
+                                <p>
+                                    Through this project, I gained valuable insights
+                                    that will help me design better and more inclusive
+                                    products in the future.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="reflection-card__list">
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">01</span>
+
+                                <div>
+                                    <h4>The importance of early user testing</h4>
+                                    <p>
+                                        Real feedback early on helped identify
+                                        key usability issues.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">02</span>
+
+                                <div>
+                                    <h4>Iteration leads to clarity</h4>
+                                    <p>
+                                        Simplifying the design through multiple iterations
+                                        made the experience more intuitive.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="reflection-item">
+                                <span class="reflection-item__number">03</span>
+
+                                <div>
+                                    <h4>Designing for multiple perspectives</h4>
+                                    <p>
+                                        Considering both teacher and student viewpoints
+                                        led to a more balanced solution.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Project Documents -->
+                <div class="project-documents">
+
+                    <div class="project-documents__header">
+                        <div>
+                            <h3>Project Documents</h3>
+
+                            <p>
+                                Supporting documents for this project.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="project-documents__grid">
+
+                        <a class="document-card" href="../assets/documents/DES229_assignment2_VraimentCool.pdf"
+                            target="_blank" rel="noopener">
+                            <div class="document-card__icon ">
+                                <img src="../assets/icons/pdf.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="document-card__content">
+                                <strong>User requirements</strong>
+                                <span>PDF · 2.78 MB</span>
+                            </div>
+
+                            <div class="document-card__action">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </div>
+                        </a>
+
+
+                        <a class="document-card" href="../assets/documents/DES229_assignment4_VraimentCool.pdf"
+                            target="_blank" rel="noopener noreferrer">
+                            <div class="document-card__icon ">
+                                <img src="../assets/icons/pdf.svg" alt="" aria-hidden="true">
+                            </div>
+
+                            <div class="document-card__content">
+                                <strong>Usability Testing</strong>
+                                <span>PDF · 323 KB</span>
+                            </div>
+
+                            <div class="document-card__action">
+                                <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+        <a class="next-project scroll-reveal" href="paymate.html">
+            <span>Next Project</span>
+            <span class="next-project__title"><span>02</span> PayMate <span aria-hidden="true">→</span></span>
+        </a>
+    </main>
+</body>
+
+</html>

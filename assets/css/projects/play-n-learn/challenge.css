@@ -1,0 +1,241 @@
+/* ========================================
+   Challenge Section
+======================================== */
+
+.challenge-section {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(56px, 7vw, 120px);
+
+
+}
+
+
+.challenge-audience {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.challenge-audience__pill {
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    background: #eee9ff;
+    color: var(--color-play-n-learn);
+
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.challenge-section__accent {
+    display: block;
+
+    width: 54px;
+    height: 3px;
+
+    margin-top: 28px;
+
+    border-radius: 999px;
+
+    background: var(--color-play-n-learn);
+}
+
+.challenge-section__note {
+    margin: 26px 0 0;
+
+    color: #8b82ad;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   Challenge Cards
+======================================== */
+
+.challenge-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+
+    align-items: center;
+}
+
+/*
+ * Outer card:
+ * reveal + base rotation
+ */
+
+.challenge-card {
+    --card-rotation: 0deg;
+    --enter-rotation: -3deg;
+    --reveal-delay: 0ms;
+
+
+    opacity: 0;
+
+    transform:
+        translateY(42px) rotate(var(--enter-rotation));
+
+    transition:
+        opacity 700ms var(--ease-out-smooth),
+        transform 900ms var(--ease-out-smooth);
+
+    transition-delay: var(--reveal-delay);
+
+    will-change: opacity, transform;
+}
+
+/* Card individual personality */
+
+.challenge-card--motivation {
+    --card-rotation: -2.5deg;
+    --enter-rotation: -5deg;
+    --reveal-delay: 0ms;
+
+}
+
+.challenge-card--learning {
+    --card-rotation: 1.5deg;
+    --enter-rotation: 4deg;
+    --reveal-delay: 140ms;
+}
+
+.challenge-card--insights {
+    --card-rotation: 2.2deg;
+    --enter-rotation: 5deg;
+    --reveal-delay: 280ms;
+}
+
+/* Revealed */
+
+.challenge-card.is-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0) rotate(var(--card-rotation));
+}
+
+/* ========================================
+   Card Surface
+======================================== */
+
+.challenge-card__surface {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 320px;
+    padding: 28px;
+
+    border: 1px solid rgb(107 66 225 / 8%);
+    border-radius: 28px;
+
+    background: rgb(255 255 255 / 92%);
+
+    box-shadow:
+        0 12px 40px rgb(83 57 150 / 6%);
+
+
+    transition:
+        transform 400ms var(--ease-out-smooth),
+        box-shadow 400ms ease,
+        background-color 400ms ease;
+}
+
+/* ========================================
+   Hover
+======================================== */
+
+.challenge-card:hover {
+    transform:
+        translateY(0) rotate(0deg);
+}
+
+.challenge-card:hover .challenge-card__surface {
+
+
+    transform: translateY(-6px);
+
+    background: rgb(255 255 255 / 92%);
+
+    box-shadow:
+        0 22px 55px rgb(83 57 150 / 50%);
+}
+
+/* ========================================
+   Card Content
+======================================== */
+
+.challenge-card__icon {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background: #efe9ff;
+
+    font-size: 1.25rem;
+}
+
+.challenge-card h3 {
+    margin: 0 0 12px;
+
+    color: #343052;
+
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.3;
+}
+
+.challenge-card p {
+    margin: 0 0 24px;
+
+    color: #65607d;
+
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.challenge-card__tag {
+    align-self: flex-start;
+
+    margin-top: auto;
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background: #eee7ff;
+
+    color: var(--color-play-n-learn);
+
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Different card accent */
+
+.challenge-card--learning .challenge-card__icon,
+.challenge-card--learning .challenge-card__tag {
+    background: #ffe8f1;
+    color: #f04c8b;
+}
+
+.challenge-card--insights .challenge-card__icon,
+.challenge-card--insights .challenge-card__tag {
+    background: #fff0e5;
+    color: #ff7a36;
+}

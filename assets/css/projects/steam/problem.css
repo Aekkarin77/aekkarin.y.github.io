@@ -1,0 +1,188 @@
+/* ========================================
+   Problem & Objectives
+======================================== */
+
+
+.steam-problem-objectives__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(70px, 9vw, 145px);
+    align-items: start;
+}
+
+.steam-problem__description {
+    margin: 64px 0 0;
+    color: var(--steam-muted);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.55;
+}
+
+.steam-objectives__list {
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.steam-objective {
+    --objective-delay: 0ms;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    gap: 25px;
+    padding: 28px 0 34px;
+}
+
+.steam-objective:nth-child(1) {
+    --objective-delay: 220ms;
+}
+
+.steam-objective:nth-child(2) {
+    --objective-delay: 380ms;
+}
+
+.steam-objective:nth-child(3) {
+    --objective-delay: 540ms;
+}
+
+.steam-objective:not(:last-child)::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: #50545c;
+    content: "";
+    transform-origin: left;
+}
+
+.steam-objective__number {
+    display: block;
+    overflow: hidden;
+    color: var(--steam-green);
+    font-size: clamp(3.2rem, 4.5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    transition: color 225ms ease;
+}
+
+.steam-objective__number>span {
+    display: block;
+}
+
+.steam-objective__content {
+    transition: transform 225ms ease;
+}
+
+.steam-objective__content h3 {
+    margin: 0 0 7px;
+    color: var(--steam-text);
+    font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* Hover */
+.steam-objective:hover .steam-objective__number {
+    color: #c2ff5c;
+}
+
+.steam-objective:hover .steam-objective__content {
+    transform: translateX(6px);
+}
+
+.steam-objective:not(:last-child):hover::after {
+    background: var(--steam-green);
+}
+
+/* ========================================
+   Initial animation state
+======================================== */
+
+.js .steam-section-heading,
+.js .steam-problem__description,
+.js .steam-objective {
+    opacity: 0;
+}
+
+.js .steam-section-heading {
+    transform: translateY(24px);
+}
+
+.js .steam-problem__description {
+    transform: translateY(18px);
+}
+
+.js .steam-objective {
+    transform: translateY(22px);
+}
+
+.js .steam-objective__number>span {
+    transform: translateY(110%) scale(0.96);
+}
+
+.js .steam-objective:not(:last-child)::after {
+    transform: scaleX(0);
+}
+
+/* ========================================
+   Animation when section is visible
+======================================== */
+
+.steam-problem-objectives.is-visible .steam-section-heading {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 600ms ease,
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.steam-problem-objectives.is-visible .steam-problem__description {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 600ms ease 180ms,
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1) 180ms;
+}
+
+.steam-problem-objectives.is-visible .steam-objective {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 550ms ease var(--objective-delay),
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1) var(--objective-delay);
+}
+
+.steam-problem-objectives.is-visible .steam-objective__number>span {
+    transform: translateY(0) scale(1);
+    transition:
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1) calc(var(--objective-delay) + 60ms);
+}
+
+.steam-problem-objectives.is-visible .steam-objective:not(:last-child)::after {
+    transform: scaleX(1);
+    transition:
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1) calc(var(--objective-delay) + 350ms),
+        background-color 225ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .steam-section-heading,
+    .js .steam-problem__description,
+    .js .steam-objective {
+        opacity: 1;
+        transform: none;
+    }
+
+    .js .steam-objective__number>span,
+    .js .steam-objective:not(:last-child)::after {
+        transform: none;
+    }
+
+    .steam-problem-objectives.is-visible *,
+    .steam-problem-objectives.is-visible *::after {
+        transition: none;
+    }
+}
