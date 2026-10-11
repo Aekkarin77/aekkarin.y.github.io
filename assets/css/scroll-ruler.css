@@ -1,0 +1,237 @@
+:root {
+    --scroll-ruler-accent: #006eff;
+    --scroll-ruler-ink: #111827;
+    --scroll-ruler-line: rgb(17 24 39 / 34%);
+    --scroll-ruler-hover-line: #ff0202;
+    --scroll-ruler-width: 60px;
+    --scroll-ruler-title-size: 34px;
+}
+
+
+html,
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.scroll-ruler-ui {
+    font-family: Inter, Arial, sans-serif;
+}
+
+.scroll-ruler__veil {
+    position: fixed;
+    z-index: 900;
+    inset: 0;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    opacity: 0;
+    transition: opacity 260ms ease;
+    pointer-events: none;
+}
+
+.scroll-ruler-ui.is-hovered .scroll-ruler__veil {
+    opacity: 1;
+}
+
+.scroll-ruler-ui.is-after-content .scroll-ruler,
+.scroll-ruler-ui.is-after-content .scroll-ruler__titles {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-ruler {
+    position: fixed;
+    z-index: 902;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--scroll-ruler-width);
+    overflow: hidden;
+    border-left: 1px solid color-mix(in srgb, var(--scroll-ruler-line), transparent 45%);
+    cursor: crosshair;
+    touch-action: none;
+    transition: opacity 180ms ease;
+}
+
+.scroll-ruler__backdrop {
+    position: absolute;
+    inset: 0;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+    -webkit-mask-image: linear-gradient(
+        to left,
+        #000 40%,
+        rgb(0 0 0 / 72%) 55%,
+        rgb(0 0 0 / 24%) 75%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to left,
+        #000 40%,
+        rgb(0 0 0 / 72%) 55%,
+        rgb(0 0 0 / 24%) 75%,
+        transparent 100%
+    );
+}
+
+.scroll-ruler__scale {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    will-change: transform;
+}
+
+.scroll-ruler__tick {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 0;
+}
+
+.scroll-ruler__tick-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 10px;
+    height: 1px;
+    background: var(--scroll-ruler-ink);
+    opacity: 0.38;
+    transform-origin: right center;
+}
+
+.scroll-ruler__tick--major .scroll-ruler__tick-line {
+    width: 20px;
+    opacity: 0.76;
+}
+
+.scroll-ruler__tick-number {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    color: var(--scroll-ruler-ink);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 9px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    opacity: 0.5;
+    transform: translateY(-50%);
+}
+
+.scroll-ruler__hover-band {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    border: 0;
+    background: var(--scroll-ruler-hover-line);
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: opacity 100ms ease;
+    pointer-events: none;
+}
+
+.scroll-ruler.is-hovered .scroll-ruler__hover-band {
+    opacity: 1;
+}
+
+.scroll-ruler__cursor {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.scroll-ruler__cursor-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1.5px;
+    background: var(--scroll-ruler-accent);
+}
+
+.scroll-ruler__percent {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    color: var(--scroll-ruler-accent);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.scroll-ruler__titles {
+    position: fixed;
+    z-index: 903;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+}
+
+.scroll-ruler__char {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    color: var(--scroll-ruler-ink);
+    font-size: var(--scroll-ruler-title-size);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: pre;
+    will-change: transform, opacity;
+    pointer-events: none;
+}
+
+.scroll-ruler__section-link {
+    position: absolute;
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+.scroll-ruler__section-link:focus-visible {
+    outline: 1.5px solid var(--scroll-ruler-accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+    .scroll-ruler-ui {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-ruler__scale,
+    .scroll-ruler__cursor,
+    .scroll-ruler__char {
+        transition: none !important;
+    }
+}

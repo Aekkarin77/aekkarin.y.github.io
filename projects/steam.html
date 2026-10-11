@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <script>
-        document.documentElement.classList.add("js");
-    </script>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="../assets/css/scroll-ruler.css">
+    <script src="../assets/js/components/scroll-ruler.js" defer></script>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/projects/steam.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -22,7 +22,7 @@
     <script type="module" src="../assets/js/components/site-header.js"></script>
 </head>
 
-<body>
+<body class="page-steam">
     <site-header></site-header>
 
     <main class="steam-page" id="top">
@@ -95,7 +95,7 @@
             </div>
         </dl>
         <div class="steam-content steam-container">
-            <section class="steam-overview scroll-reveal" id="overview">
+            <section class="steam-overview scroll-reveal" id="overview" data-scroll-ruler-title="OVERVIEW">
                 <h2>Overview</h2>
                 <p class="section-description">
                     STEAM is a database laboratory group project that models a digital game distribution platform for
@@ -106,7 +106,8 @@
                 </p>
             </section>
             <!-------- Problem & Objectives ----------------------------------------------------------->
-            <section class="steam-problem-objectives" id="problem-objectives" data-section-reveal>
+            <section class="steam-problem-objectives" id="problem-objectives" data-section-reveal
+                data-scroll-ruler-title="GOALS">
                 <p class="section-label">
                     PROBLEM & OBJECTIVES
                 </p>
@@ -183,7 +184,7 @@
             </section>
 
             <!-------- Users & Requirements ----------------------------------------------------------->
-            <section class="steam-roles" id="users-requirements" data-section-reveal>
+            <section class="steam-roles" id="users-requirements" data-section-reveal data-scroll-ruler-title="USERS">
                 <p class="section-label">
                     USERS & REQUIREMENTS
                 </p>
@@ -308,7 +309,7 @@
             </section>
 
             <!-------- User Flows ----------------------------------------------------------->
-            <section class="steam-flows" id="user-flows" data-section-reveal>
+            <section class="steam-flows" id="user-flows" data-section-reveal data-scroll-ruler-title="FLOWS">
                 <p class="section-label">
                     USER FLOWS
                 </p>
@@ -521,7 +522,7 @@
             </section>
 
             <!-------- Proposed UI ----------------------------------------------------------->
-            <section class="steam-showcase" id="proposed-ui" data-section-reveal data-screen-showcase>
+            <section class="steam-showcase" id="proposed-ui" data-section-reveal data-screen-showcase data-scroll-ruler-title="UI DESIGN">
 
                 <p class="section-label">
                     PROPOSED UI
@@ -533,7 +534,9 @@
                         proposed experience.
                     </h2>
 
-                    <a class="steam-showcase__figma" href="https://www.figma.com/design/K0Vrwss25YAaPa2ef5UcXc/Steam?node-id=0-1&t=GiaF9Z0xH1MQN8ZS-1" target="_blank" rel="noopener">
+                    <a class="steam-showcase__figma"
+                        href="https://www.figma.com/design/K0Vrwss25YAaPa2ef5UcXc/Steam?node-id=0-1&t=GiaF9Z0xH1MQN8ZS-1"
+                        target="_blank" rel="noopener">
                         View Figma Prototype
                         <span class="figma-button__arrow">
                             <img src="../assets/icons/up-right.svg" alt="" aria-hidden="true">
@@ -638,7 +641,7 @@
             </section>
 
             <!-------- Data Mapping ----------------------------------------------------------->
-            <section class="steam-mapping" id="ui-data-mapping" data-section-reveal data-mapping-section>
+            <section class="steam-mapping" id="ui-data-mapping" data-section-reveal data-mapping-section data-scroll-ruler-title="DATA FLOW">
                 <p class="section-label">
                     UI-DATA MAPPING
                 </p>
@@ -699,7 +702,7 @@
             </section>
 
             <!-------- Database Design ----------------------------------------------------------->
-            <section class="steam-database" id="database-design" data-section-reveal data-database-section>
+            <section class="steam-database" id="database-design" data-section-reveal data-database-section  data-scroll-ruler-title="DATABASE">
                 <p class="section-label steam-database__label">
                     DATABASE DESIGN
                 </p>
@@ -848,7 +851,7 @@
             </section>
 
             <!-------- Steam Prototype ----------------------------------------------------------->
-            <section class="steam-prototype" id="functional-prototype" data-section-reveal data-prototype-section>
+            <section class="steam-prototype" id="functional-prototype" data-section-reveal data-prototype-section data-scroll-ruler-title="PROTOTYPE">
                 <div class="function-container">
 
                     <header class="steam-prototype__header">
@@ -1015,7 +1018,7 @@
             </section>
 
             <!-------- Steam Reflections ----------------------------------------------------------->
-            <section class="steam-reflections" id="challenges-reflections" data-section-reveal>
+            <section class="steam-reflections" id="challenges-reflections" data-section-reveal data-scroll-ruler-title="REFLECTIONS">
 
 
                 <header class="steam-reflections__header">

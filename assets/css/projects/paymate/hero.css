@@ -1,3 +1,10 @@
+body.page-paymate {
+    --scroll-ruler-accent: #ff5722;
+    --scroll-ruler-ink: #111827;
+    --scroll-ruler-line: rgb(17 24 39 / 34%);
+    --scroll-ruler-hover-line: #004224;
+}
+
 :root {
     --color-paymate: #004224;
     --pay-descript: #4d504e;

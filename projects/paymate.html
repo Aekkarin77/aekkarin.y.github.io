@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <script>
-        document.documentElement.classList.add("js");
-    </script>
+    <script> document.documentElement.classList.add("js"); </script>
+    <link rel="stylesheet" href="../assets/css/scroll-ruler.css">
+    <script src="../assets/js/components/scroll-ruler.js" defer></script>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/projects/paymate.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -22,13 +22,13 @@
     <script type="module" src="../assets/js/components/site-header.js"></script>
 </head>
 
-<body>
+<body class="page-paymate">
     <site-header></site-header>
 
     <main class="paymate-page" id="top">
         <div aria-hidden="true" class="glow glow--top-left"></div>
         <div aria-hidden="true" class="glow glow--right"></div>
-        <section class="paymate-hero ">
+        <section class="paymate-hero " id="hero" data-scroll-ruler-title="PAYMATE">
             <div class="fireflies" aria-hidden="true"></div>
 
             <div class="project-back-navigation scroll-reveal">
@@ -56,8 +56,7 @@
                         and take control of your finances.</p>
                 </div>
                 <div class="paymate-hero__visual scroll-reveal">
-                    <div data-scroll-animation
-                        data-animation-src="../assets/animations/hero-paymate.json"></div>
+                    <div data-scroll-animation data-animation-src="../assets/animations/hero-paymate.json"></div>
                 </div>
 
             </div>
@@ -87,7 +86,7 @@
         </dl>
         <div class="paymate-content paymate-container">
             <!--------  Overview ---------------------------------------------------------------------->
-            <section class="paymate-section scroll-reveal" id="overview">
+            <section class="paymate-section scroll-reveal" id="overview" data-scroll-ruler-title="OVERVIEW">
                 <h2>Overview</h2>
                 <p class="section-description">
                     PayMate is a personal finance management application designed to make everyday expense tracking
@@ -102,7 +101,8 @@
                 </p>
             </section>
             <!-------- Problem & Objectives ----------------------------------------------------------->
-            <section class="paymate-problem" data-problem-section>
+            <section class="paymate-problem" data-problem-section id="problem-goals"
+                data-scroll-ruler-title="PROBLEM & GOALS">
                 <div class="paymate-problem__intro">
                     <p class="section-label paymate-problem__label">
                         Problem & Objectives
@@ -179,7 +179,8 @@
                 </div>
             </section>
             <!-------- Requirements ------------------------------------------------------------------->
-            <section class="requirements-section" id="requirements" data-requirements-section>
+            <section class="requirements-section" id="requirements" data-requirements-section
+                data-scroll-ruler-title="REQUIREMENTS">
                 <header class="requirements-header">
                     <p class="section-label requirements-header__label">
                         Key Requirements
@@ -279,7 +280,8 @@
                 </div>
             </section>
             <!-------- System Architecture ------------------------------------------------------------>
-            <section class="architecture-section" id="architecture" data-architecture-section>
+            <section class="architecture-section" id="architecture" data-architecture-section
+                data-scroll-ruler-title="ARCHITECTURE">
                 <header class="architecture-header">
                     <div>
                         <p class="section-label architecture-header__label">
@@ -456,7 +458,7 @@
                 </div>
             </section>
             <!-------- User & System Flows ------------------------------------------------------------>
-            <section class="receipt-story" data-receipt-story>
+            <section class="receipt-story" data-receipt-story id="user-flows" data-scroll-ruler-title="USER FLOWS">
                 <div class="receipt-story__sticky">
                     <div class="receipt-story__container">
 
@@ -696,7 +698,7 @@
                 </div>
             </section>
             <!-------- Data & Technical Design -------------------------------------------------------->
-            <section class="data-design" id="data-design" data-data-design>
+            <section class="data-design" id="data-design" data-data-design data-scroll-ruler-title="DATA & TECH">
                 <header class="data-design__header">
                     <div class="data-design__heading">
                         <div>
@@ -950,7 +952,8 @@
                 </div>
             </section>
             <!-------- Design Outcome ---------------------------------------------------------------->
-            <section class="design-outcome" data-design-outcome>
+            <section class="design-outcome" data-design-outcome id="final-design"
+                data-scroll-ruler-title="FINAL DESIGN">
                 <header class="design-outcome__header">
                     <div class="design-outcome__heading">
                         <p class="section-label design-outcome__label">
@@ -969,7 +972,9 @@
                             and interactions in the PayMate prototype.
                         </p>
 
-                        <a class="figma-button" href="https://www.figma.com/design/YPlR7ajrMk82c8686Ytydc/PayMate?node-id=0-1&t=LHdLp3obiEAQGqbp-1" target="_blank" rel="noopener">
+                        <a class="figma-button"
+                            href="https://www.figma.com/design/YPlR7ajrMk82c8686Ytydc/PayMate?node-id=0-1&t=LHdLp3obiEAQGqbp-1"
+                            target="_blank" rel="noopener">
                             <img class="figma-button__logo" src="../assets/icons/figma.svg" alt="">
 
                             <span>View Full Prototype</span>
@@ -1058,7 +1063,8 @@
                 </div>
             </section>
             <!-------- Challenges & Learnings -------------------------------------------------------->
-            <section class="reflection-section" data-reflection-section>
+            <section class="reflection-section" data-reflection-section id="reflection"
+                data-scroll-ruler-title="REFLECTION">
                 <header class="reflection-header">
                     <p class="section-label reflection-header__label">
                         REFLECTION
@@ -1167,8 +1173,8 @@
                         </div>
                     </article>
                 </div>
-
-                <div class="project-documents">
+            </section>
+            <div class="project-documents">
                     <div class="project-documents__header">
 
                         <h2>Project Documents</h2>
@@ -1212,7 +1218,7 @@
                             </div>
                         </a>
 
-                       <a class="document-link" href="../assets/documents/Group14_Slide.pdf" target="_blank"
+                        <a class="document-link" href="../assets/documents/Group14_Slide.pdf" target="_blank"
                             rel="noopener">
                             <span class="document-link__icon">
                                 <img src="../assets/icons/pdf.svg" alt="">
@@ -1229,7 +1235,6 @@
 
                     </div>
                 </div>
-            </section>
         </div>
 
 

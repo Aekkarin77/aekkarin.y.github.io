@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <script>
-        document.documentElement.classList.add("js");
-    </script>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="../assets/css/scroll-ruler.css">
+    <script src="../assets/js/components/scroll-ruler.js" defer></script>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/projects/play-n-learn.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -22,12 +22,12 @@
     <script type="module" src="../assets/js/components/site-header.js"></script>
 </head>
 
-<body>
+<body class="page-play-n-learn">
     <site-header></site-header>
     <main class="play-page">
         <div aria-hidden="true" class="glow glow--top-left"></div>
         <div aria-hidden="true" class="glow glow--right"></div>
-        <section class="case-study-hero">
+        <section class="case-study-hero" id="hero" data-scroll-ruler-title="PLAY N' LEARN">
             <div class="fireflies" aria-hidden="true"></div>
 
 
@@ -57,8 +57,7 @@
                 </div>
 
                 <div class="play-n-learn-hero__visual scroll-reveal">
-                    <div data-scroll-animation
-                        data-animation-src="../assets/animations/hero-play-n-learn.json"></div>
+                    <div data-scroll-animation data-animation-src="../assets/animations/hero-play-n-learn.json"></div>
                 </div>
 
             </div>
@@ -87,7 +86,7 @@
         </dl>
         <div class="case-study-content case-study-container">
             <!--------  Overview --------------------------------------------------------------------------------->
-            <section class="case-study-section scroll-reveal">
+            <section class="case-study-section scroll-reveal" id="overview" data-scroll-ruler-title="OVERVIEW">
                 <h2>Overview</h2>
                 <p class="sub-text">
                     Play N' Learn is a gamified learning application prototype inspired by progression-based learning
@@ -153,7 +152,7 @@
                 </div>
             </section>
             <!--------  The Challenge ---------------------------------------------------------------------------->
-            <section class="case-study-section challenge-section scroll-reveal" id="challenge">
+            <section class="case-study-section challenge-section scroll-reveal" id="challenge" data-scroll-ruler-title="CHALLENGE">
                 <div class="case-study-section">
                     <h2>
                         The Challenge
@@ -248,7 +247,7 @@
                 </div>
             </section>
             <!--------  Research & Survey ------------------------------------------------------------------------>
-            <section class="case-study-section research-section scroll-reveal">
+            <section class="case-study-section research-section scroll-reveal" id="research" data-scroll-ruler-title="RESEARCH">
                 <h2>Research & Survey</h2>
 
                 <p class="sub-text">
@@ -406,7 +405,7 @@
             </section>
 
             <!-------- Low-Fidelity Design ----------------------------------------------------------------------->
-            <section class="case-study-section low-fidelity-section scroll-reveal">
+            <section class="case-study-section low-fidelity-section scroll-reveal" id="low-fi" data-scroll-ruler-title="WIREFRAMES">
                 <h2>Low-Fidelity Design</h2>
 
                 <p class="sub-text">
@@ -554,7 +553,7 @@
             </section>
 
             <!-------- Testing & Learnings----------------------------------------------------------------------->
-            <section class="case-study-section usability-section scroll-reveal">
+            <section class="case-study-section usability-section scroll-reveal" id="usability" data-scroll-ruler-title="USABILITY TESTING">
 
                 <div class="usability-layout">
 
@@ -697,7 +696,7 @@
             </section>
 
             <!-------- High-Fidelity Design----------------------------------------------------------------------->
-            <section class="case-study-section high-fidelity-section scroll-reveal">
+            <section class="case-study-section high-fidelity-section scroll-reveal" id="high-fi" data-scroll-ruler-title="FINAL DESIGN">
 
                 <div class="high-fi-header">
 
@@ -841,7 +840,7 @@
 
             </section>
             <!-------- challenge-learning----------------------------------------------------------------------->
-            <section class="case-study-section challenge-learning-section scroll-reveal">
+            <section class="case-study-section challenge-learning-section scroll-reveal" id="challenge-learning" data-scroll-ruler-title="REFLECTIONS">
 
                 <!-- Header -->
                 <div class="case-study-section">
@@ -989,7 +988,10 @@
                 </div>
 
 
-                <!-- Project Documents -->
+                
+
+            </section>
+            <!-- Project Documents -->
                 <div class="project-documents">
 
                     <div class="project-documents__header">
@@ -1041,8 +1043,6 @@
                     </div>
 
                 </div>
-
-            </section>
 
         </div>
         <a class="next-project scroll-reveal" href="paymate.html">

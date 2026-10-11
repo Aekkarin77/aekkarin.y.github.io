@@ -1,7 +1,10 @@
-/*body {
-    -webkit-user-select: none;
-    user-select: none;
-}*/
+body.page-play-n-learn {
+    --scroll-ruler-accent: #9c27b0;
+    --scroll-ruler-ink: #111827;
+    --scroll-ruler-line: rgb(17 24 39 / 34%);
+    --scroll-ruler-hover-line: #713FE4;
+}
+
 .play-page {
     position: relative;
     isolation: isolate;

@@ -208,10 +208,6 @@
 
 /* Documents */
 
-.project-documents {
-    margin-top: 34px;
-}
-
 .project-documents__header h2{
     color: var(--pay-heading);
     margin-bottom: 8px;
@@ -272,7 +268,7 @@
 .document-link__content {
     display: flex;
     gap: 6px;
-    color: #64716e;
+    color: #000000;
     font-size: 0.93rem;
 }
 
@@ -301,27 +297,6 @@
 }
 
 
-/* Documents entrance */
-
-.js .document-link {
-    opacity: 0;
-    transform: translateY(22px);
-}
-
-.reflection-section.is-visible .document-link:nth-child(1) {
-    animation:
-        reflection-fade-up 650ms var(--reflection-ease) 1860ms both;
-}
-
-.reflection-section.is-visible .document-link:nth-child(2) {
-    animation:
-        reflection-fade-up 650ms var(--reflection-ease) 1980ms both;
-}
-
-.reflection-section.is-visible .document-link:nth-child(3) {
-    animation:
-        reflection-fade-up 650ms var(--reflection-ease) 2100ms both;
-}
 
 /* Keyframes */
 

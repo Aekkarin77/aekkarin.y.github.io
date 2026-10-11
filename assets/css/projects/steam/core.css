@@ -1,3 +1,10 @@
+body.page-steam {
+    --scroll-ruler-accent: #aaff2c;
+    --scroll-ruler-ink: #ffffff;
+    --scroll-ruler-line: rgba(255, 255, 255, 0.34);
+    --scroll-ruler-hover-line: #ffffff;
+}
+
 :root {
     --steam-bg: #030708;
     --steam-panel: #071016;
